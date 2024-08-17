@@ -265,7 +265,7 @@ BRTab:AddButton({
 	local character = game.Players.LocalPlayer.Character or Players.LocalPlayer.CharacterAdded:Wait()
 	character:SetPrimaryPartCFrame(CFrame.new(position))
 	wait(3)
-	position = Vector3.new(-88.28643798828125, 103.42346954345703, -2862.521240234375)
+	position = Vector3.new(-88.28643798828125, 103.42346954345703, -2865.521240234375)
 	local character = game.Players.LocalPlayer.Character or Players.LocalPlayer.CharacterAdded:Wait()
 	character:SetPrimaryPartCFrame(CFrame.new(position))
   	end    
