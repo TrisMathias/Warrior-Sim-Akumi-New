@@ -261,7 +261,7 @@ end
 BRTab:AddButton({
 	Name = "Obby Teleport",
 	Callback = function()
-	position = Vector3.new(75, 35, -2824)
+	position = Vector3.new(140, 48, -2473)
 	wait(3)
 	position = Vector3.new(-88.28643798828125, 103.42346954345703, -2862.521240234375)
 	local character = game.Players.LocalPlayer.Character or Players.LocalPlayer.CharacterAdded:Wait()
