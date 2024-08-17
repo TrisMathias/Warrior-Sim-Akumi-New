@@ -261,11 +261,7 @@ end
 BRTab:AddButton({
 	Name = "Obby Teleport",
 	Callback = function()
-	local args = {
-    		[1] = true
-		}
-	game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Obby"):WaitForChild("ChangePlayerObbying"):FireServer(unpack(args))
-	game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Obby"):WaitForChild("GetObbyData"):InvokeServer()
+	position = Vector3.new(75, 35, -2824)
 	wait(3)
 	position = Vector3.new(-88.28643798828125, 103.42346954345703, -2862.521240234375)
 	local character = game.Players.LocalPlayer.Character or Players.LocalPlayer.CharacterAdded:Wait()
