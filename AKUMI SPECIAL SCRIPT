@@ -41,8 +41,6 @@ end
 
 
 --FOREST
-local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
-local window = DrRayLibrary:Load("AKUMI SPECIAL SCRIPT", "Default")
 if game.PlaceId == 16436007861 then
 
 local BRTab = DrRayLibrary.newTab("FOREST", "ImageIdHere")
