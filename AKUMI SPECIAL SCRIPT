@@ -7,17 +7,14 @@ if game.PlaceId == 17856546976 then
 
 
 --TABS
-local FarmTab = DrRayLibrary.newTab("FARM", "ImageIdHere")
-
-local WorldsTab = DrRayLibrary.newTab("WORLDS)", "ImageIdHere")
-
-
+local BRTab = DrRayLibrary.newTab("FOREST", "ImageIdHere")
+local BRTab = DrRayLibrary.newTab("BACKROOMS", "ImageIdHere")
+local ForestTab = DrRayLibrary.newTab("DESSERT (W2)", "ImageIdHere")
 
 
---TOGGLES/BUTTONS
-
-
-
+BRTab.newButton("FOREST", "FOREST TEST!", function()
+    print('Hello!')
+end)
 
 
 
