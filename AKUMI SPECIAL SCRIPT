@@ -6,6 +6,27 @@ local window = DrRayLibrary:Load("BACKROOMS AKUMI SPECIAL SCRIPT", "Default")
 if game.PlaceId == 17856546976 then
 
 
+--TABS
+local FarmTab = DrRayLibrary.newTab("FARM", "ImageIdHere")
+
+local WorldsTab = DrRayLibrary.newTab("WORLDS)", "ImageIdHere")
+
+
+
+
+--TOGGLES/BUTTONS
+FarmTab.newToggle("Auto Damage", "Toggle! (prints the state)", true, function(toggleState)
+    if toggleState then
+        print("On")
+    else
+        print("Off")
+    end
+end)
+
+
+
+
+
 --VALUES
 getgenv().SwordSimulator = {
     AutoDamage = false,
@@ -128,24 +149,6 @@ end
 
 
 
-
---TABS
-local FarmTab = DrRayLibrary.newTab("FARM", "ImageIdHere")
-
-local WorldsTab = DrRayLibrary.newTab("WORLDS)", "ImageIdHere")
-
-
-
-
-
---TOGGLES/BUTTONS
-FarmTab.newToggle("Auto Damage", "Toggle! (prints the state)", true, function(toggleState)
-    if toggleState then
-        print("On")
-    else
-        print("Off")
-    end
-end)
 
 
 
