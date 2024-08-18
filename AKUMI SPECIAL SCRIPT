@@ -15,14 +15,6 @@ local WorldsTab = DrRayLibrary.newTab("WORLDS)", "ImageIdHere")
 
 
 --TOGGLES/BUTTONS
-FarmTab.newToggle("Auto Damage", "Toggle! (prints the state)", true, function(toggleState)
-    if toggleState then
-        print("On")
-    else
-        print("Off")
-    end
-end)
-
 
 
 
