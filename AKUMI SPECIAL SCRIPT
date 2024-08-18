@@ -286,6 +286,7 @@ XPTab.newToggle("LEVEL 1 DUMMY", "AUTO XP, USE SKYFALL SKILL", false, function(t
     while toggleState do
         W1L1()
     end
+end
 end)
 
 
@@ -474,7 +475,6 @@ for _, arg in ipairs(args) do
 end
     wait(0.6)
   end
-end
 
 
 
