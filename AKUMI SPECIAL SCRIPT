@@ -7,144 +7,21 @@ if game.PlaceId == 17856546976 then
 
 
 --TABS
-local Farmtab = DrRayLibrary.newTab("FARM", "ImageIdHere")
+local FarmTab = DrRayLibrary.newTab("FARM", "ImageIdHere")
 
-local Worldstab = DrRayLibrary.newTab("WORLDS)", "ImageIdHere")
+local WorldsTab = DrRayLibrary.newTab("WORLDS)", "ImageIdHere")
 
 
 
 
 --TOGGLES/BUTTONS
-Farmtab.newToggle("Auto Damage", "Toggle! (prints the state)", true, function(toggleState)
+FarmTab.newToggle("Auto Damage", "Toggle! (prints the state)", true, function(toggleState)
     if toggleState then
         print("On")
     else
         print("Off")
     end
 end)
-
-
-
-
-
---VALUES
-getgenv().SwordSimulator = {
-    AutoDamage = false,
-    KillAura = false;
-  ClaimGift = false;
-  GetCodes = false;
-  MazeGem = false;
-  RaidGem = false;
-};
-
-
---FUNCTIONS
-
---AUTO DAMAGE
-function AutoDamage()
-    while getgenv().SwordSimulator.AutoDamage == true do
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Weapon"):WaitForChild("TakeDamage"):FireServer()
-        wait(.001)
-end
-      end
-
-
-
-
-
---KILL AURA
-function KillAura()
-    while getgenv().SwordSimulator.KillAura == true do
-      while wait(15) do
-        getgenv().G = true
-getgenv().Creator = 'https://discord.gg/B3HqPPzFYr - HalloweenGaster'
-while getgenv().G and getgenv().Creator == 'https://discord.gg/B3HqPPzFYr - HalloweenGaster' do
-wait(1)
-sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", 112412400000)
-sethiddenproperty(game.Players.LocalPlayer, "MaxSimulationRadius", 112412400000)
-for i,d in pairs(game:GetService("Workspace"):GetDescendants()) do
-    if d.ClassName == 'Humanoid' and d.Parent.Name ~= game.Players.LocalPlayer.Name then
-        d.Health = 0
-    end
-end
-end
-end
-end
-end
-
-
-
-
-
---CLAIM GIFT
-function ClaimGift()
-  while getgenv().SwordSimulator.ClaimGift == true do
- 
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Online"):WaitForChild("TryGetOnlineGift"):InvokeServer(1)
-  wait(3)
- 
- 
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Online"):WaitForChild("TryGetOnlineGift"):InvokeServer(2)
-  wait(3)
- 
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Online"):WaitForChild("TryGetOnlineGift"):InvokeServer(3)
-  wait(3)
-  game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Online"):WaitForChild("TryGetOnlineGift"):InvokeServer(4)
-  wait(3)
- 
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Online"):WaitForChild("TryGetOnlineGift"):InvokeServer(5)
-  wait(3)
- 
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Online"):WaitForChild("TryGetOnlineGift"):InvokeServer(6)
-  wait(3)
- 
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Online"):WaitForChild("TryGetOnlineGift"):InvokeServer(7)
-  wait(3)
- 
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Online"):WaitForChild("TryGetOnlineGift"):InvokeServer(8 )
-  wait(3)
- 
-end
-end
-
-
-
-
---GET CODES
-function GetCodes()
-  while getgenv().SwordSimulator.GetCodes == true do
-    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Reward"):WaitForChild("CodeReward"):FireServer("like400k")
-    wait(3)
-    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Reward"):WaitForChild("CodeReward"):FireServer("welcome")
-    wait(3)
-    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Reward"):WaitForChild("CodeReward"):FireServer("0.5mlike")
-    wait(3)
-end
-end
-
-
-
-
---MAZE GEM
-function MazeGem()
-  while getgenv().SwordSimulator.MazeGem == true do
-    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("BackRoom"):WaitForChild("CollectChest"):FireServer()
-    wait(2)
- 
-  end
-end
-
-
-
-
-
---RAID GEMS
-function RaidGem()
-  while getgenv().SwordSimulator.RaidGem == true do
-    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("DailyShop"):WaitForChild("BuyItem"):FireServer(2)
-    wait(0.5)
-  end
-end
 
 
 
