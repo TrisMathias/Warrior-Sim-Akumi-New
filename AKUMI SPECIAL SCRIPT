@@ -3,6 +3,7 @@ local window = DrRayLibrary:Load("Warrior Sim Akumi Special", "https://images-wi
 
 --BACKROOMS
 if game.PlaceId == 17856546976 then
+local tab = DrRayLibrary.newTab("Backrooms", "ImageIdHere")
 tab.newButton("Backrooms", "Backrooms Test!", function()
     print('Hello!')
 end)
