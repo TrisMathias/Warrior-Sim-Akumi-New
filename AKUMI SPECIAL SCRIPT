@@ -23,7 +23,7 @@ FarmTab.newToggle("AUTO DAMAGE", "AUTO ATTACK (NO ANIMATION)", false, function(t
 end)
 
 
-FarmTab.newToggle("KILL AURA", "Enemy One Hit!", false, function(toggleState)
+FarmTab.newToggle("KILL AURA", "Enemy One Hit! (Kill Doesn't Count)", false, function(toggleState)
     getgenv().SwordSimulator.KillAura = toggleState
     if toggleState then
         KillAura()
@@ -31,7 +31,7 @@ FarmTab.newToggle("KILL AURA", "Enemy One Hit!", false, function(toggleState)
 end)
 
 
-MISCTab.newToggle("CLAIM GIFT", "Claims Daily Gift", false, function(toggleState)
+MISCTab.newToggle("CLAIM GIFT", "Claims Daily Gift (BYPASS WAIT TIME)", false, function(toggleState)
     getgenv().SwordSimulator.ClaimGift = toggleState
     if toggleState then
         ClaimGift()
@@ -39,7 +39,7 @@ MISCTab.newToggle("CLAIM GIFT", "Claims Daily Gift", false, function(toggleState
 end)
 
 
-MISCTab.newToggle("GET CODES", "PUTS GAME CODES", false, function(toggleState)
+MISCTab.newToggle("GET CODES", "GET GAME CODES", false, function(toggleState)
     getgenv().SwordSimulator.GetCodes = toggleState
     if toggleState then
         GetCodes()
@@ -55,11 +55,47 @@ MISCTab.newToggle("MAZE GEMS", "GET MAZE GEMS", false, function(toggleState)
 end)
 
 
-MISCTab.newToggle("Raid Gems", "Buys Raid Gems (Using Tokens)", false, function(toggleState)
+MISCTab.newToggle("Raid Gems", "Buys Raid Shop Gems (Using Tokens)", false, function(toggleState)
     getgenv().SwordSimulator.RaidGem = toggleState
     if toggleState then
        RaidGem()
     end
+end)
+
+WORLDSTab.newButton("FOREST (W1)", "TELEPORTS TO FOREST", function()
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Door"):WaitForChild("Teleport"):FireServer(1)
+end)
+
+
+WORLDSTab.newButton("DESERT (W2)", "TELEPORTS TO DESERT", function()
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Door"):WaitForChild("Teleport"):FireServer(2)
+end)
+
+
+WORLDSTab.newButton("BEACH (W3)", "TELEPORTS TO BEACH", function()
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Door"):WaitForChild("Teleport"):FireServer(3)
+end)
+
+WORLDSTab.newButton("SNOW (W4)", "TELEPORTS TO SNOW", function()
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Door"):WaitForChild("Teleport"):FireServer(4)
+end)
+
+WORLDSTab.newButton("VOLCANO (W5)", "TELEPORTS TO VOLCANO", function()
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Door"):WaitForChild("Teleport"):FireServer(5)
+end)
+
+
+WORLDSTab.newButton("CASTLE (W6)", "TELEPORTS TO CASTLE", function()
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Door"):WaitForChild("Teleport"):FireServer(6)
+end)
+
+
+WORLDSTab.newButton("CANDY (W7)", "TELEPORTS TO CANDY", function()
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Door"):WaitForChild("Teleport"):FireServer(7)
+end)
+
+WORLDSTab.newButton("GARDEN (W8)", "TELEPORTS TO GARDEN", function()
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Door"):WaitForChild("Teleport"):FireServer(8)
 end)
 
 --VALUES
