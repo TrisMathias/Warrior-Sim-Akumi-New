@@ -14,13 +14,53 @@ local WORLDSTab = DrRayLibrary.newTab("WORLDS TP)", "ImageIdHere")
 
 
 --TOGGLES/BUTTONS
-FarmTab.newToggle("Kill Aura", "Enemy One Hit!", false, function(toggleState)
+
+FarmTab.newToggle("AUTO DAMAGE", "AUTO ATTACK (NO ANIMATION)", false, function(toggleState)
+    getgenv().SwordSimulator.AutoDamage = toggleState
+    if toggleState then
+        AutoDamage()
+    end
+end)
+
+
+FarmTab.newToggle("KILL AURA", "Enemy One Hit!", false, function(toggleState)
     getgenv().SwordSimulator.KillAura = toggleState
     if toggleState then
         KillAura()
     end
 end)
 
+
+MISCTab.newToggle("CLAIM GIFT", "Claims Daily Gift", false, function(toggleState)
+    getgenv().SwordSimulator.ClaimGift = toggleState
+    if toggleState then
+        ClaimGift()
+    end
+end)
+
+
+MISCTab.newToggle("GET CODES", "PUTS GAME CODES", false, function(toggleState)
+    getgenv().SwordSimulator.GetCodes = toggleState
+    if toggleState then
+        GetCodes()
+    end
+end)
+
+
+MISCTab.newToggle("MAZE GEMS", "GET MAZE GEMS", false, function(toggleState)
+    getgenv().SwordSimulator.MazeGem = toggleState
+    if toggleState then
+       MazeGem()
+    end
+end)
+
+
+MISCTab.newToggle("Raid Gems", "Buys Raid Gems (Using Tokens)", false, function(toggleState)
+    getgenv().SwordSimulator.RaidGem = toggleState
+    if toggleState then
+       RaidGem()
+    end
+end)
 
 --VALUES
 getgenv().SwordSimulator = {
