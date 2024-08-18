@@ -166,13 +166,7 @@ function W8VIP()
     end
 
 function W8SVIP()
-    for i = 1, #argsTable do
-        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(argsTable[i]))
-    end
-    wait(0.6)
-end
-
-local argsTable = {
+    local argsTable = {
     {true, Vector3.new(-467.4615783691406, 4.82562255859375, -8023.68994140625)},
     {true, Vector3.new(-486.02838134765625, 4.823024749755859, -8028.83349609375)},
     {true, Vector3.new(-500.26922607421875, 4.795405864715576, -8046.85888671875)},
@@ -180,6 +174,13 @@ local argsTable = {
     {true, Vector3.new(-488.3849182128906, 4.831083297729492, -8114.63671875)},
     {true, Vector3.new(-468.4650573730469, 4.8077545166015625, -8122.13134765625)}
 }
+
+for i = 1, #argsTable do
+    local args = argsTable[i]
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
+    wait(0.6)
+end
+
 -- Toggles
 local Tab = Window:MakeTab({
 	Name = "Farm",
