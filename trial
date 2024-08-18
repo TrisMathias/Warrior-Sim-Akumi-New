@@ -296,7 +296,3 @@ if game.PlaceId == 16436007861 or game.PlaceId == 17856546976 or game.PlaceId ==
 end
 
 OrionLib:Init()
-
-else 
-
-end
