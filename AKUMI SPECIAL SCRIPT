@@ -14,7 +14,7 @@ local WORLDSTab = DrRayLibrary.newTab("WORLDS TP)", "ImageIdHere")
 
 
 --TOGGLES/BUTTONS
-FarmTab.newToggle("Kill Aura", "Kill Aura! (prints the state)", true, function(toggleState)
+FarmTab.newToggle("Kill Aura", "Kill Aura! (prints the state)", false, function(toggleState)
     getgenv().SwordSimulator.KillAura = toggleState
     if toggleState then
         KillAura()
