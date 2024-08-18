@@ -1,3 +1,17 @@
+ getgenv().SwordSimulator = {
+    AutoDamage = false,
+    KillAura = false;
+  ClaimGift = false;
+  GetCodes = false;
+  MazeGem = false;
+  RaidGem = false;
+W8L1 = false;
+W8L249 = false;
+W8L285 = false;
+W8VIP = false;
+W8SVIP = false;
+  };
+
 
 function W8SVIP()
     local args = {
@@ -40,7 +54,14 @@ function W8SVIP()
         [2] = Vector3.new(-488.3849182128906, 4.831083297729492, -8114.63671875)
     }
 
+
+
     game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
 
     wait(0.6)
 end
+
+getgenv().SwordSimulator.W8SVIP = Value 
+      if Value then 
+        while Value do
+         W8SVIP()
