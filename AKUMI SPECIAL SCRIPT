@@ -7,15 +7,15 @@ if game.PlaceId == 17856546976 then
 
 
 --TABS
-local FarmTab = DrRayLibrary.newTab("FARM", "ImageIdHere")
+local Farmtab = DrRayLibrary.newTab("FARM", "ImageIdHere")
 
-local WorldsTab = DrRayLibrary.newTab("WORLDS)", "ImageIdHere")
+local Worldstab = DrRayLibrary.newTab("WORLDS)", "ImageIdHere")
 
 
 
 
 --TOGGLES/BUTTONS
-FarmTab.newToggle("Auto Damage", "Toggle! (prints the state)", true, function(toggleState)
+Farmtab.newToggle("Auto Damage", "Toggle! (prints the state)", true, function(toggleState)
     if toggleState then
         print("On")
     else
