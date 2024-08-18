@@ -242,7 +242,7 @@ end
 if game.PlaceId == 16436007861 then
 
 local FarmTab = DrRayLibrary.newTab("WAVE FARM", "ImageIdHere")
-local FarmTab = DrRayLibrary.newTab("XP FARM", "ImageIdHere")
+local XPTab = DrRayLibrary.newTab("XP FARM", "ImageIdHere")
 local MISCTab = DrRayLibrary.newTab("EXTRA", "ImageIdHere")
 local WORLDSTab = DrRayLibrary.newTab("WORLDS TP)", "ImageIdHere")
 
@@ -280,6 +280,13 @@ MISCTab.newToggle("GET CODES", "GET GAME CODES", false, function(toggleState)
 end)
 
 
+XPTab.newToggle("LEVEL 1 DUMMY", "AUTO XP, USE SKYFALL SKILL", false, function(toggleState)
+    getgenv().SwordSimulator.W1L1 = toggleState
+    if toggleState then
+    while toggleState do
+        W1L1()
+    end
+end)
 
 
 
@@ -337,6 +344,7 @@ getgenv().SwordSimulator = {
   GetCodes = false;
   MazeGem = false;
   RaidGem = false;
+  W1L1 = false;
 };
 
 
@@ -447,6 +455,28 @@ function RaidGem()
     wait(0.5)
   end
 end
+
+
+
+
+
+--AUTO XP DUMMY
+function W1L1()
+  while getgenv().SwordSimulator.W1L1 == true do
+   local args = {
+    {true, Vector3.new(-121.70074462890625, 3.9477274417877197, 304.7380676269531)},
+    {true, Vector3.new(-132.7552947998047, 4.1347479820251465, 270.1832275390625)},
+    {true, Vector3.new(-122.17987060546875, 4.007842063903809, 326.95947265625)}
+}
+
+for _, arg in ipairs(args) do
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(arg))
+end
+    wait(0.6)
+  end
+end
+
+
 
 
 
