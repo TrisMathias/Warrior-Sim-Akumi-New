@@ -166,23 +166,22 @@ function W8VIP()
     end
 
 function W8SVIP()
-   local argumentSets = {
-    {true, Vector3.new(-467.4615783691406, 4.82562255859375, -8023.68994140625)},
-    {true, Vector3.new(-486.02838134765625, 4.823024749755859, -8028.83349609375)},
-    {true, Vector3.new(-500.26922607421875, 4.795405864715576, -8046.85888671875)},
-    {true, Vector3.new(-507.19427490234375, 4.820165157318115, -8099.03564453125)},
-    {true, Vector3.new(-488.3849182128906, 4.831083297729492, -8114.63671875)},
-    {true, Vector3.new(-468.4650573730469, 4.8077545166015625, -8122.13134765625)}
-}
+    local argumentSets = {
+        {true, Vector3.new(-467.4615783691406, 4.82562255859375, -8023.68994140625)},
+        {true, Vector3.new(-486.02838134765625, 4.823024749755859, -8028.83349609375)},
+        {true, Vector3.new(-500.26922607421875, 4.795405864715576, -8046.85888671875)},
+        {true, Vector3.new(-507.19427490234375, 4.820165157318115, -8099.03564453125)},
+        {true, Vector3.new(-488.3849182128906, 4.831083297729492, -8114.63671875)},
+        {true, Vector3.new(-468.4650573730469, 4.8077545166015625, -8122.13134765625)}
+    }
 
--- Get the ServerBehaviour remote
-local ServerBehaviour = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour")
+    -- Get the ServerBehaviour remote
+    local ServerBehaviour = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour")
 
--- Iterate over each set of arguments and fire the server event
-for _, args in pairs(argumentSets) do
-    ServerBehaviour:FireServer(unpack(args))
-end
-        wait(0.6)
+    -- Iterate over each set of arguments and fire the server event
+    for _, args in pairs(argumentSets) do
+        ServerBehaviour:FireServer(unpack(args))
+        wait(0.6)  -- Wait for 0.6 seconds between each request
     end
 end
 
