@@ -50,7 +50,6 @@ local function checkAndExecute()
     while true do
         if getgenv().SwordSimulator.W8SVIP then
             W8SVIP()
-            print("Executing W8SVIP function")
         end
         wait(0.1)  -- Check periodically
     end
