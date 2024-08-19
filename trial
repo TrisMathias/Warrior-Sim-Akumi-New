@@ -1,298 +1,72 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Akumi Scripts | Sword Simulator [BETA] ", HidePremium = false, IntroText = "SECRETIVE AKUMI Scripts", SaveConfig = true, ConfigFolder = "OrionTest"})
+-- Global settings for SwordSimulator
+getgenv().SwordSimulator = {
+    AutoDamage = false,
+    KillAura = false,
+    ClaimGift = false,
+    GetCodes = false,
+    MazeGem = false,
+    RaidGem = false,
+    W8L1 = false,
+    W8L249 = false,
+    W8L285 = false,
+    W8VIP = false,
+    W8SVIP = true
+}
 
-if game.PlaceId == 16436007861 or game.PlaceId == 17856546976 or game.PlaceId == 17678973277 or game.PlaceId == 17678973620 or game.PlaceId == 17678973875 or game.PlaceId == 17678974142 or game.PlaceId == 17678974410 or game.PlaceId == 17766697506 or game.PlaceId == 18970398024 then
+local argumentSets = {
+    {[1] = true, [2] = Vector3.new(-1012.8035278320312, 3.8871304988861084, -4818.76171875)},
+    {[1] = true, [2] = Vector3.new(-2216.6552734375, 3.8654520511627197, -4818.8310546875)},
+    {[1] = true, [2] = Vector3.new(-3452.474853515625, 7.9895405769348145, -4818.8857421875)}
+}
 
-    local argsTable = {
-        {true, Vector3.new(-467.4615783691406, 4.82562255859375, -8023.68994140625)},
-        {true, Vector3.new(-486.02838134765625, 4.823024749755859, -8028.83349609375)},
-        {true, Vector3.new(-500.26922607421875, 4.795405864715576, -8046.85888671875)},
-        {true, Vector3.new(-507.19427490234375, 4.820165157318115, -8099.03564453125)},
-        {true, Vector3.new(-488.3849182128906, 4.831083297729492, -8114.63671875)},
-        {true, Vector3.new(-468.4650573730469, 4.8077545166015625, -8122.13134765625)}
-    }
+local ServerBehaviour = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour")
 
-    local getgenv = require(game:GetService("ReplicatedStorage").RobloxScriptLoader)
-
-    local SwordSimulator = {
-        AutoDamage = false,
-        KillAura = false,
-        ClaimGift = false,
-        GetCodes = false,
-        MazeGem = false,
-        RaidGem = false,
-        W8L1 = false,
-        W8L249 = false,
-        W8L285 = false,
-        W8VIP = false,
-        W8SVIP = false
-    }
-
-    function AutoDamage()
-        while SwordSimulator.AutoDamage do
-            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Weapon"):WaitForChild("TakeDamage"):FireServer()
-            wait(0.001)
-        end
-    end
-
-    function KillAura()
-        while SwordSimulator.KillAura do
-            while wait(15) do
-                getgenv().G = true
-                getgenv().Creator = 'https://discord.gg/B3HqPPzFYr - HalloweenGaster'
-                while getgenv().G and getgenv().Creator == 'https://discord.gg/B3HqPPzFYr - HalloweenGaster' do
-                    wait(1)
-                    sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", 112412400000)
-                    sethiddenproperty(game.Players.LocalPlayer, "MaxSimulationRadius", 112412400000)
-                    for i,d in pairs(game:GetService("Workspace"):GetDescendants()) do
-                        if d.ClassName == 'Humanoid' and d.Parent.Name ~= game.Players.LocalPlayer.Name then
-                            d.Health = 0
-                        end
-                    end
-                end
-            end
-        end
-    end
-
-    function ClaimGift()
-        while SwordSimulator.ClaimGift do
-            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Online"):WaitForChild("TryGetOnlineGift"):InvokeServer(1)
-            wait(3)
-            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Online"):WaitForChild("TryGetOnlineGift"):InvokeServer(2)
-            wait(3)
-            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Online"):WaitForChild("TryGetOnlineGift"):InvokeServer(3)
-            wait(3)
-            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Online"):WaitForChild("TryGetOnlineGift"):InvokeServer(4)
-            wait(3)
-            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Online"):WaitForChild("TryGetOnlineGift"):InvokeServer(5)
-            wait(3)
-            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Online"):WaitForChild('TryGetOnlineGift'):InvokeServer(6)
-            wait(3)
-            game:GetService('ReplicatedStorage').Remotes.Common.Online.TryGetOnlineGift:InvokeServer(7)
-            wait(3)
-            game:GetService('ReplicatedStorage').Remotes.Common.Online.TryGetOnlineGift:InvokeServer(8)
-            wait(3)
-        end
-    end
-
-    function GetCodes()
-        while SwordSimulator.GetCodes do
-            game:GetService('ReplicatedStorage').Remotes.Common.Reward.CodeReward:FireServer('like400k')
-            wait(3)
-            game:GetService('ReplicatedStorage').Remotes.Common.Reward.CodeReward:FireServer('welcome')
-            wait(3)
-        end
-    end
-
-    function MazeGem()
-        while SwordSimulator.MazeGem do
-            game:GetService('ReplicatedStorage').Remotes.BackRoom.CollectChest:FireServer()
-            wait(2)
-        end
-    end
-
-    function RaidGem()
-        while SwordSimulator.RaidGem do
-            game:GetService('ReplicatedStorage').Remotes.Common.DailyShop.BuyItem:FireServer(2)
-            wait(0.5)
-        end
-    end
-
-    function W8L1()
-        success, err = pcall(function()
-            local args = {
-                [1] = true,
-                [2] = Vector3.new(-87.6982650756836, 4.643090724945068, -1382.11083984375)
-            }
-            ReplicatedStorage.Remotes.Skill.ServerBehaviour:FireServer(unpack(args))
-        end)
-        if not success then
-            print('Error in W8L1: ', err)
-        end
-        wait(0.6)
-    end
-
-    function W8L249()
-        success, err = pcall(function()
-            local args = {
-                [1] = true,
-                [2] = Vector3.new(-107.0389633178711, 4.4632182121276855, -1382.79638671875)
-            }
-            ReplicatedStorage.Remotes.Skill.ServerBehaviour:FireServer(unpack(args))
-        end)
-        if not success then
-            print('Error in W8L249: ', err)
-        end
-        wait(0.6)
-    end
-
-    function W8L285()
-        success, err = pcall(function()
-            local args = {
-                [1] = true,
-                [2] = Vector3.new(-129.45223999023438, 9.229759216308594, -1382.054931640625)
-            }
-            ReplicatedStorage.Remotes.Skill.ServerBehaviour:FireServer(unpack(args))
-        end)
-        if not success then
-            print('Error in W8L285: ', err)
-        end
-        wait(0.6)
-    end
-
-    function W8VIP()
-        success, err = pcall(function()
-            local args = {
-                [1] = true,
-                [2] = Vector3.new(-106.70401000976562, 9.071269035339355, -1315.8131103515625)
-            }
-            ReplicatedStorage.Remotes.Skill.ServerBehaviour:FireServer(unpack(args))
-        end)
-        if not success then
-            print('Error in W8VIP: ', err)
-        end
-        wait(0.6)
-    end
-
-    function W8SVIP()
-        for i=1,#argsTable do
-          game:GetService('ReplicatedStorage').Remotes.Skill.ServerBehaviour:FireServer(unpack(argsTable[i]))
-          wait(0.6)
-      end 
-    end
-
-    local Tab=Window:MakeTab({
-      Name="Farm",
-      Icon="rbxassetid://15403180883",
-      PremiumOnly=false 
-    })
-
-    local MiscTab=Window:MakeTab({
-      Name="Miscellanous",
-      Icon="rbxassetid://15402939318",
-      PremiumOnly=false 
-    })
-
-    local BRTab=Window:MakeTab({
-      Name="Backrooms",
-      Icon="rbxassetid://4483345998",
-      PremiumOnly=false 
-    })
-
-    local SnowTab=Window:MakeTab({
-      Name="Snow (World 4)",
-      Icon="rbxassetid://4483345998",
-      PremiumOnly=false 
-    })
-
-   Tab:AddToggle({
-      Name="Auto Damage",
-      Default=false,
-      Callback=function(Value) 
-         SwordSimulator.AutoDamage=Value 
-         if Value then AutoDamage() end 
-       end    
-   })
-
-   Tab:AddToggle({
-      Name="Kill Aura",
-      Default=false,
-      Callback=function(Value) 
-         SwordSimulator.KillAura=Value 
-         if Value then KillAura() end 
-       end    
-   })
-
-   MiscTab:AddToggle({
-      Name="Claim Gifts",
-      Default=false,
-      Callback=function(Value) 
-         SwordSimulator.ClaimGift=Value 
-         if Value then ClaimGift() end 
-       end    
-   })
-
-   MiscTab:AddToggle({
-      Name="Get Codes",
-      Default=false,
-      Callback=function(Value) 
-         SwordSimulator.GetCodes=Value 
-         if Value then GetCodes() end 
-       end    
-   })
-
-   BRTab:AddToggle({
-      Name="Maze Gems (Back Rooms World)",
-      Default=false,
-      Callback=function(Value) 
-         SwordSimulator.MazeGem=Value 
-         if Value then MazeGem() end 
-       end    
-   })
-
-   BRTab:AddToggle({
-      Name="Raid Gems (Back Rooms World)",
-      Default=false,
-      Callback=function(Value) 
-         SwordSimulator.RaidGem=Value 
-         if Value then RaidGem() end 
-       end    
-   })
-
-   SnowTab:AddButton({
-     Name="Obby Teleport",
-     Callback=function()  
-       position=Vector3.new(-88.28643798828125,103.42346954345703,-2862.521240234375)  
-       local character=game.Players.LocalPlayer.Character or Players.LocalPlayer.CharacterAdded:wait()  
-       character:SetPrimaryPartCFrame(CFrame.new(position))  
-        end    
-   })
-
-   Tab:AddButton({
-     Name="LEVEL 1 DUMMY XP FARM",
-     Default=false,
-     Callback=function(Value) 
-       SwordSimulator.W8L1=Value 
-       if Value then while Value do W8L1() end end 
-     end    
-   })
-
-   Tab:AddButton({
-     Name="LEVEL 249 DUMMY XP FARM",
-     Default=false,
-     Callback=function(Value) 
-       SwordSimulator.W8L249=Value 
-       if Value then while Value do W8L249() end end 
-     end    
-   })
-
-   Tab:AddButton({
-     Name="LEVEL 285 DUMMY XP FARM",
-     Default=false,
-     Callback=function(Value) 
-       SwordSimulator.W8L285=Value 
-       if Value then while Value do W8L285() end end 
-     end    
-   })
-
-   Tab:AddButton({
-     Name="VIP DUMMY XP FARM",
-     Default=false,
-     Callback=function(Value) 
-       SwordSimulator.W8VIP=Value 
-       if Value then while Value do W8VIP() end end 
-     end    
-   })
-
-   Tab:AddButton({
-     Name="INFINITY STONE XP FARM?",
-     Default=false,
-     Callback=function(Value) 
-       SwordSimulator.W8SVIP=Value 
-       if Value then while Value do W8SVIP() end end 
-     end    
-   })
-
+-- Execute the argument sets
+for _, args in pairs(argumentSets) do
+    ServerBehaviour:FireServer(unpack(args))
+    wait(0.1)  -- Wait for 0.6 seconds between each request
 end
 
-OrionLib:Init()
+-- Define the W8SVIP function
+local function W8SVIP()
+    -- Replace with actual functionality
+    local argumentSets = {
+        {[1] = true, [2] = Vector3.new(-1012.8035278320312, 3.8871304988861084, -4818.76171875)},
+        {[1] = true, [2] = Vector3.new(-2216.6552734375, 3.8654520511627197, -4818.8310546875)},
+        {[1] = true, [2] = Vector3.new(-3452.474853515625, 7.9895405769348145, -4818.8857421875)}
+}
+
+    local ServerBehaviour = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour")
+
+    -- Execute the argument sets
+    for _, args in pairs(argumentSets) do
+        ServerBehaviour:FireServer(unpack(args))
+        wait(0.1)  -- Wait for 0.6 seconds between each request
+    end
+end
+
+-- Function to continuously check and execute W8SVIP
+local function checkAndExecute()
+    while true do
+        if getgenv().SwordSimulator.W8SVIP then
+            W8SVIP()
+            print("Executing W8SVIP function")
+        end
+        wait(0.1)  -- Check periodically
+    end
+end
+
+-- Start the continuous check and execute function
+spawn(function()
+    print("Starting checkAndExecute in a new thread")
+    checkAndExecute()
+end)
+
+-- For testing: Set W8SVIP to true after a delay
+wait(2)  -- Wait for 2 seconds before starting
+print("Setting W8SVIP to true")
+getgenv().SwordSimulator.W8SVIP = true
+
+-- For testing: Set W8SVIP to true after a delay
+wait(10)  -- Run for 10 seconds
+print("W8SVIP will remain true")
