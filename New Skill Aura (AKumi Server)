@@ -12,37 +12,21 @@ getgenv().SwordSimulator = {
     W8VIP = false,
     W8SVIP = true
 }
-
-local argumentSets = {
-    {[1] = true, [2] = Vector3.new(-2216.612548828125, 3.9317283630371094, 281.16009521484375)},
-    {[1] = true, [2] = Vector3.new(-1013.4981689453125, 3.8429713249206543, 280.8925476074219)},
-    {[1] = true, [2] = Vector3.new(-3451.733154296875, 8.013497352600098, 280.439697265625)}
-}
-
-local ServerBehaviour = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour")
-
--- Execute the argument sets
-for _, args in pairs(argumentSets) do
-    ServerBehaviour:FireServer(unpack(args))
-    wait(0.1)  -- Wait for 0.6 seconds between each request
-end
+-- Get the character's position
+local character = game.Players.LocalPlayer.Character
+local characterPosition = character.HumanoidRootPart.Position
 
 -- Define the W8SVIP function
 local function W8SVIP()
-    -- Replace with actual functionality
-    local argumentSets = {
-        {[1] = true, [2] = Vector3.new(-2216.612548828125, 3.9317283630371094, 281.16009521484375)},
-        {[1] = true, [2] = Vector3.new(-1013.4981689453125, 3.8429713249206543, 280.8925476074219)},
-        {[1] = true, [2] = Vector3.new(-3451.733154296875, 8.013497352600098, 280.439697265625)}
-    }
+    -- Get the character's position
+    local characterPosition = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
 
+    -- Replace with actual functionality
     local ServerBehaviour = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour")
 
     -- Execute the argument sets
-    for _, args in pairs(argumentSets) do
-        ServerBehaviour:FireServer(unpack(args))
-        wait(0.1)  -- Wait for 0.6 seconds between each request
-    end
+    ServerBehaviour:FireServer(false, characterPosition)
+    wait(0.1)  -- Wait for 0.6 seconds between each request
 end
 
 -- Function to continuously check and execute W8SVIP
@@ -50,7 +34,6 @@ local function checkAndExecute()
     while true do
         if getgenv().SwordSimulator.W8SVIP then
             W8SVIP()
-            print("Executing W8SVIP function")
         end
         wait(0.1)  -- Check periodically
     end
