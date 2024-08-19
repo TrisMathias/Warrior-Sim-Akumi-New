@@ -5,6 +5,8 @@
 --FOREST
 --FOREST
 --FOREST
+local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
+local window = DrRayLibrary:Load("BACKROOMS AKUMI SPECIAL SCRIPT", "Default")
 if game.PlaceId == 16436007861 then
 
 local FarmTab = DrRayLibrary.newTab("WAVE FARM", "ImageIdHere")
@@ -42,7 +44,7 @@ MISCTab.newToggle("GET CODES", "GET GAME CODES", false, function(toggleState)
     end
 end)
 
-WORLDSTab.newToggle("LVL1 XP DUMMY", "AUTO XP DUH", false, function(toggleState)
+XPTab.newToggle("LVL1 XP DUMMY", "AUTO XP DUH", false, function(toggleState)
     getgenv().SwordSimulator.W1L1 = toggleState
     if toggleState then
         spawn(function()
