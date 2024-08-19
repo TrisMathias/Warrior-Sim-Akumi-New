@@ -232,6 +232,14 @@ end
 
 
 
+
+
+
+
+
+
+
+
 --FOREST
 --FOREST
 --FOREST
@@ -239,13 +247,14 @@ end
 --FOREST
 --FOREST
 --FOREST
+local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
+local window = DrRayLibrary:Load("BACKROOMS AKUMI SPECIAL SCRIPT", "Default")
 if game.PlaceId == 16436007861 then
 
 local FarmTab = DrRayLibrary.newTab("WAVE FARM", "ImageIdHere")
 local XPTab = DrRayLibrary.newTab("XP FARM", "ImageIdHere")
 local MISCTab = DrRayLibrary.newTab("EXTRA", "ImageIdHere")
-local WORLDSTab = DrRayLibrary.newTab("WORLDS TP)", "ImageIdHere")
-
+local WORLDSTab = DrRayLibrary.newTab("WORLDS TP", "ImageIdHere")
 
 --TOGGLES/BUTTONS
 
@@ -255,7 +264,6 @@ FarmTab.newToggle("AUTO DAMAGE", "AUTO ATTACK (NO ANIMATION)", false, function(t
         AutoDamage()
     end
 end)
-
 
 FarmTab.newToggle("KILL AURA", "Enemy One Hit! (Kill Doesn't Count)", false, function(toggleState)
     getgenv().SwordSimulator.KillAura = toggleState
@@ -271,7 +279,6 @@ MISCTab.newToggle("CLAIM GIFT", "Claims Daily Gift (BYPASS WAIT TIME)", false, f
     end
 end)
 
-
 MISCTab.newToggle("GET CODES", "GET GAME CODES", false, function(toggleState)
     getgenv().SwordSimulator.GetCodes = toggleState
     if toggleState then
@@ -279,34 +286,26 @@ MISCTab.newToggle("GET CODES", "GET GAME CODES", false, function(toggleState)
     end
 end)
 
-
-WORLDSTab.newToggle("LVL1 XP DUMMY", "AUTO XP DUH", false, function(toggleState)
+XPTab.newToggle("LVL1 XP DUMMY", "AUTO XP DUH", false, function(toggleState)
     getgenv().SwordSimulator.W1L1 = toggleState
     if toggleState then
-        W1L1()
+        spawn(function()
+            while getgenv().SwordSimulator.W1L1 do
+                pcall(function() W1L1() end)
+                wait(0.1)
+            end
+        end)
     end
 end)
 
-
-
-
-
-
-
-
-
-
-
-
+--WORLD TELEPORT BUTTONS
 WORLDSTab.newButton("FOREST (W1)", "TELEPORTS TO FOREST", function()
     game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Door"):WaitForChild("Teleport"):FireServer(1)
 end)
 
-
 WORLDSTab.newButton("DESERT (W2)", "TELEPORTS TO DESERT", function()
     game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Door"):WaitForChild("Teleport"):FireServer(2)
 end)
-
 
 WORLDSTab.newButton("BEACH (W3)", "TELEPORTS TO BEACH", function()
     game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Door"):WaitForChild("Teleport"):FireServer(3)
@@ -320,11 +319,9 @@ WORLDSTab.newButton("VOLCANO (W5)", "TELEPORTS TO VOLCANO", function()
     game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Door"):WaitForChild("Teleport"):FireServer(5)
 end)
 
-
 WORLDSTab.newButton("CASTLE (W6)", "TELEPORTS TO CASTLE", function()
     game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Door"):WaitForChild("Teleport"):FireServer(6)
 end)
-
 
 WORLDSTab.newButton("CANDY (W7)", "TELEPORTS TO CANDY", function()
     game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Door"):WaitForChild("Teleport"):FireServer(7)
@@ -337,164 +334,103 @@ end)
 --VALUES
 getgenv().SwordSimulator = {
     AutoDamage = false,
-    KillAura = false;
-  ClaimGift = false;
-  GetCodes = false;
-  MazeGem = false;
-  RaidGem = false;
-  W1L1 = false;
+    KillAura = false,
+    ClaimGift = false,
+    GetCodes = false,
+    MazeGem = false,
+    RaidGem = false,
+    W1L1 = false,
 };
-
 
 --FUNCTIONS
 
 --AUTO DAMAGE
 function AutoDamage()
-    while getgenv().SwordSimulator.AutoDamage == true do
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Weapon"):WaitForChild("TakeDamage"):FireServer()
-        wait(.001)
+    while getgenv().SwordSimulator.AutoDamage do
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Weapon"):WaitForChild("TakeDamage"):FireServer()
+        wait(0.001)
+    end
 end
-      end
-
-
-
-
 
 --KILL AURA
 function KillAura()
-    while getgenv().SwordSimulator.KillAura == true do
-      while wait(15) do
-        getgenv().G = true
-getgenv().Creator = 'https://discord.gg/B3HqPPzFYr - HalloweenGaster'
-while getgenv().G and getgenv().Creator == 'https://discord.gg/B3HqPPzFYr - HalloweenGaster' do
-wait(1)
-sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", 112412400000)
-sethiddenproperty(game.Players.LocalPlayer, "MaxSimulationRadius", 112412400000)
-for i,d in pairs(game:GetService("Workspace"):GetDescendants()) do
-    if d.ClassName == 'Humanoid' and d.Parent.Name ~= game.Players.LocalPlayer.Name then
-        d.Health = 0
+    while getgenv().SwordSimulator.KillAura do
+        while wait(15) do
+            pcall(function()
+                sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", 112412400000)
+                sethiddenproperty(game.Players.LocalPlayer, "MaxSimulationRadius", 112412400000)
+                for i, d in pairs(game:GetService("Workspace"):GetDescendants()) do
+                    if d.ClassName == 'Humanoid' and d.Parent.Name ~= game.Players.LocalPlayer.Name then
+                        d.Health = 0
+                    end
+                end
+            end)
+        end
     end
 end
-end
-end
-end
-end
-
-
-
-
 
 --CLAIM GIFT
 function ClaimGift()
-  while getgenv().SwordSimulator.ClaimGift == true do
- 
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Online"):WaitForChild("TryGetOnlineGift"):InvokeServer(1)
-  wait(3)
- 
- 
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Online"):WaitForChild("TryGetOnlineGift"):InvokeServer(2)
-  wait(3)
- 
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Online"):WaitForChild("TryGetOnlineGift"):InvokeServer(3)
-  wait(3)
-  game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Online"):WaitForChild("TryGetOnlineGift"):InvokeServer(4)
-  wait(3)
- 
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Online"):WaitForChild("TryGetOnlineGift"):InvokeServer(5)
-  wait(3)
- 
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Online"):WaitForChild("TryGetOnlineGift"):InvokeServer(6)
-  wait(3)
- 
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Online"):WaitForChild("TryGetOnlineGift"):InvokeServer(7)
-  wait(3)
- 
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Online"):WaitForChild("TryGetOnlineGift"):InvokeServer(8 )
-  wait(3)
- 
-end
-end
-
-
-
-
---GET CODES
-function GetCodes()
-  while getgenv().SwordSimulator.GetCodes == true do
-    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Reward"):WaitForChild("CodeReward"):FireServer("like400k")
-    wait(3)
-    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Reward"):WaitForChild("CodeReward"):FireServer("welcome")
-    wait(3)
-    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Reward"):WaitForChild("CodeReward"):FireServer("0.5mlike")
-    wait(3)
-end
-end
-
-
-
-
---MAZE GEM
-function MazeGem()
-  while getgenv().SwordSimulator.MazeGem == true do
-    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("BackRoom"):WaitForChild("CollectChest"):FireServer()
-    wait(2)
- 
-  end
-end
-
-
-
-
-
---RAID GEMS
-function RaidGem()
-  while getgenv().SwordSimulator.RaidGem == true do
-    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("DailyShop"):WaitForChild("BuyItem"):FireServer(2)
-    wait(0.5)
-  end
-end
-
-
-
-
-
---AUTO XP DUMMY
-}
-
-local argumentSets = {
-    {[1] = true, [2] = Vector3.new(-1012.8035278320312, 3.8871304988861084, -4818.76171875)},
-    {[1] = true, [2] = Vector3.new(-2216.6552734375, 3.8654520511627197, -4818.8310546875)},
-    {[1] = true, [2] = Vector3.new(-3452.474853515625, 7.9895405769348145, -4818.8857421875)}
-}
-
-local ServerBehaviour = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour")
-
--- Execute the argument sets
-for _, args in pairs(argumentSets) do
-    ServerBehaviour:FireServer(unpack(args))
-    wait(0.1)  -- Wait for 0.6 seconds between each request
-end
-
--- Define the W1L1 function
-function W1L1()
-    -- Replace with actual functionality
-end
-
--- Function to continuously check and execute W1L1
-local function checkAndExecute()
-    while true do
-        W1L1()
-        wait(0.1)  -- Check periodically
+    while getgenv().SwordSimulator.ClaimGift do
+        pcall(function()
+            for i = 1, 8 do
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Online"):WaitForChild("TryGetOnlineGift"):InvokeServer(i)
+                wait(3)
+            end
+        end)
     end
 end
 
--- Start the continuous check and execute function
-spawn(function()
-    print("Starting checkAndExecute in a new thread")
-    checkAndExecute()
-end)
+--GET CODES
+function GetCodes()
+    while getgenv().SwordSimulator.GetCodes do
+        pcall(function()
+            local codes = {"like400k", "welcome", "0.5mlike"}
+            for _, code in ipairs(codes) do
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Reward"):WaitForChild("CodeReward"):FireServer(code)
+                wait(3)
+            end
+        end)
+    end
+end
 
+--MAZE GEM
+function MazeGem()
+    while getgenv().SwordSimulator.MazeGem do
+        pcall(function()
+            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("BackRoom"):WaitForChild("CollectChest"):FireServer()
+            wait(2)
+        end)
+    end
+end
 
+--RAID GEMS
+function RaidGem()
+    while getgenv().SwordSimulator.RaidGem do
+        pcall(function()
+            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("DailyShop"):WaitForChild("BuyItem"):FireServer(2)
+            wait(0.5)
+        end)
+    end
+end
 
+--AUTO XP DUMMY
+function W1L1()
+    pcall(function()
+        local argumentSets = {
+            {[1] = true, [2] = Vector3.new(-103.37548065185547, 7.598662376403809, 313.4438781738281)},
+            {[1] = true, [2] = Vector3.new(-126.45185089111328, 4.051950931549072, 326.3558044433594)},
+            {[1] = true, [2] = Vector3.new(-98.99095916748047, 3.9821274280548096, 251.62960815429688)}
+        }
+
+        local ServerBehaviour = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour")
+
+        -- Execute the argument sets
+        for _, args in pairs(argumentSets) do
+            ServerBehaviour:FireServer(unpack(args))
+            wait(0.1)
+        end
+    end)
+end
 
 end
