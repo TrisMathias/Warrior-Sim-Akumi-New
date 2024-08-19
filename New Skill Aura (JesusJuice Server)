@@ -15,9 +15,9 @@ getgenv().SwordSimulator = {
 local function W8SVIP()
     -- Replace with actual functionality
     local argumentSets = {
-        {[1] = false, [2] = Vector3.new(-1012.8035278320312, 3.8871304988861084, -4818.76171875)},
-        {[1] = false, [2] = Vector3.new(-2216.6552734375, 3.8654520511627197, -4818.8310546875)},
-        {[1] = false, [2] = Vector3.new(-3452.474853515625, 7.9895405769348145, -4818.8857421875)}
+        {[1] = true, [2] = Vector3.new(-1012.8035278320312, 3.8871304988861084, -4818.76171875)},
+        {[1] = true, [2] = Vector3.new(-2216.6552734375, 3.8654520511627197, -4818.8310546875)},
+        {[1] = true, [2] = Vector3.new(-3452.474853515625, 7.9895405769348145, -4818.8857421875)}
 }
 
     local ServerBehaviour = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour")
