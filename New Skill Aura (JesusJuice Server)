@@ -27,7 +27,6 @@ local function W8SVIP()
         ServerBehaviour:FireServer(unpack(args))
         wait(0.1)  -- Wait for 0.6 seconds between each request
     end
-end
 
 -- Function to continuously check and execute W8SVIP
 local function checkAndExecute()
