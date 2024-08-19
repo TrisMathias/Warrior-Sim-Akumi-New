@@ -405,7 +405,7 @@ function MazeGem()
 end
 
 --RAID GEMS
-function RaidGem()
+function RaidGem() 
     while getgenv().SwordSimulator.RaidGem do
         pcall(function()
             game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("DailyShop"):WaitForChild("BuyItem"):FireServer(2)
