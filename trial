@@ -90,8 +90,6 @@ function GetCodes()
     wait(3)
     game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Reward"):WaitForChild("CodeReward"):FireServer("welcome")
     wait(3)
-	game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Reward"):WaitForChild("CodeReward"):FireServer("0.5mlike")
-    wait(3)
     
 end
 end
@@ -111,12 +109,12 @@ function RaidGem()
   end
 end
 
-local function W8L1()
-        local success, err = pcall(function()
+function W8L1()
+        success, err = pcall(function()
             local args = {
-   		[1] = true,
-    		[2] = Vector3.new(-87.6982650756836, 4.643090724945068, -1382.11083984375)
-	    }
+           [1] = true,
+            [2] = Vector3.new(-87.6982650756836, 4.643090724945068, -1382.11083984375)
+        }
             ReplicatedStorage.Remotes.Skill.ServerBehaviour:FireServer(unpack(args))
         end)
         if not success then
@@ -125,12 +123,12 @@ local function W8L1()
         wait(0.6)
     end
 
-    local function W8L249()
-        local success, err = pcall(function()
+function W8L249()
+        success, err = pcall(function()
             local args = {
-    			[1] = true,
-    			[2] = Vector3.new(-107.0389633178711, 4.4632182121276855, -1382.79638671875)
-		}
+                [1] = true,
+                [2] = Vector3.new(-107.0389633178711, 4.4632182121276855, -1382.79638671875)
+        }
             ReplicatedStorage.Remotes.Skill.ServerBehaviour:FireServer(unpack(args))
         end)
         if not success then
@@ -139,12 +137,12 @@ local function W8L1()
         wait(0.6)
     end
 
-    local function W8L285()
-        local success, err = pcall(function()
+function W8L285()
+        success, err = pcall(function()
             local args = {
-    			[1] = true,
-    			[2] = Vector3.new(-129.45223999023438, 9.229759216308594, -1382.054931640625)
-		}
+                [1] = true,
+                [2] = Vector3.new(-129.45223999023438, 9.229759216308594, -1382.054931640625)
+        }
             ReplicatedStorage.Remotes.Skill.ServerBehaviour:FireServer(unpack(args))
         end)
         if not success then
@@ -153,20 +151,19 @@ local function W8L1()
         wait(0.6)
     end
 
-    local function W8VIP()
-        local success, err = pcall(function()
+function W8VIP()
+        success, err = pcall(function()
             local args = {
-    			[1] = true,
-    			[2] = Vector3.new(-106.70401000976562, 9.071269035339355, -1315.8131103515625)
-		}
-		ReplicatedStorage.Remotes.Skill.ServerBehaviour:FireServer(unpack(args))
+                [1] = true,
+                [2] = Vector3.new(-106.70401000976562, 9.071269035339355, -1315.8131103515625)
+        }
+        ReplicatedStorage.Remotes.Skill.ServerBehaviour:FireServer(unpack(args))
         end)
         if not success then
             print("Error in W8VIP: ", err)
         end
         wait(0.6)
     end
-
 
 function W8SVIP()
     locations = {
@@ -182,19 +179,11 @@ function W8SVIP()
             ReplicatedStorage.Remotes.Skill.ServerBehaviour:FireServer(unpack(args))
         end)
         if not success then
-            print("Error in W8SVIP: ", err)
+            print("Error in W8Functions: ", err)
         end
         wait(0.6)
     end
 end
-
-function Teleport(world)
-    	local args = {
-        	[1] = world
-    	}
-    	ReplicatedStorage.Remotes.Common.Door.Teleport:FireServer(unpack(args))
-	end
-
 
 -- Toggles
 local Tab = Window:MakeTab({
@@ -227,12 +216,6 @@ local W8Tab = Window:MakeTab({
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
-
-local TELTab = Window:MakeTab({
-        Name = "Teleport",
-        Icon = "rbxassetid://4483345998",
-        PremiumOnly = false
-    })
 
 -- Tabs
   Tab:AddToggle({
@@ -367,77 +350,6 @@ SnowTab:AddButton({
 	local character = game.Players.LocalPlayer.Character or Players.LocalPlayer.CharacterAdded:Wait()
 	character:SetPrimaryPartCFrame(CFrame.new(position))
   	end    
-})
-
-TELTab:AddButton({
-	Name = "AFK WORLD",
-	Callback = function(Value)
-		Teleport(0)
-	  end
-})
-
-TELTab:AddButton({
-	Name = "Backroom",
-	Callback = function(Value)
-		Teleport(998)
-	  end
-})
-
-TELTab:AddButton({
-	Name = "FOREST (W1)",
-	Callback = function(Value)
-		Teleport(1)
-	  end
-})
-
-TELTab:AddButton({
-	Name = "DESERT (W2)",
-	Callback = function(Value)
-		Teleport(2)
-	  end
-})
-
-TELTab:AddButton({
-	Name = "BEACH (W3)",
-	Callback = function(Value)
-		Teleport(3)
-	  end
-})
-
-
-TELTab:AddButton({
-	Name = "SNOW (W4)",
-	Callback = function(Value)
-		Teleport(4)
-	  end
-})
-
-TELTab:AddButton({
-	Name = "VOLCANO (W5)",
-	Callback = function(Value)
-		Teleport(5)
-	  end
-})
-
-TELTab:AddButton({
-	Name = "CASTLE (W6)",
-	Callback = function(Value)
-		Teleport(6)
-	  end
-})
-
-TELTab:AddButton({
-	Name = "CANDY (W7",
-	Callback = function(Value)
-		Teleport(7)
-	  end
-})
-
-TELTab:AddButton({
-	Name = "GARDEN (W8)",
-	Callback = function(Value)
-		Teleport(8)
-	  end
 })
 
 end
