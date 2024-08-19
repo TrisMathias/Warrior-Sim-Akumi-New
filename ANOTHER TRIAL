@@ -411,20 +411,21 @@ end
 
 --AUTO XP DUMMY
 function W1L1()
-    -- Replace this with the actual functionality of W1L1
-    local argumentSets = {
-        {[1] = true, [2] = Vector3.new(-1012.8035278320312, 3.8871304988861084, -4818.76171875)},
-        {[1] = true, [2] = Vector3.new(-2216.6552734375, 3.8654520511627197, -4818.8310546875)},
-        {[1] = true, [2] = Vector3.new(-3452.474853515625, 7.9895405769348145, -4818.8857421875)}
-    }
+    pcall(function()
+        local argumentSets = {
+            {[1] = true, [2] = Vector3.new(-103.37548065185547, 7.598662376403809, 313.4438781738281)},
+            {[1] = true, [2] = Vector3.new(-126.45185089111328, 4.051950931549072, 326.3558044433594)},
+            {[1] = true, [2] = Vector3.new(-98.99095916748047, 3.9821274280548096, 251.62960815429688)}
+        }
 
-    local ServerBehaviour = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour")
+        local ServerBehaviour = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour")
 
-    -- Execute the argument sets
-    for _, args in pairs(argumentSets) do
-        pcall(function() ServerBehaviour:FireServer(unpack(args)) end)
-        wait(0.1)  -- Wait for 0.1 seconds between each request
-    end
+        -- Execute the argument sets
+        for _, args in pairs(argumentSets) do
+            ServerBehaviour:FireServer(unpack(args))
+            wait(0.1)
+        end
+    end)
 end
 
 end
