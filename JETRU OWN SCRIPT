@@ -27,22 +27,12 @@ W8SVIP = false;
   };
   
 -- Functions
-  local function AutoDamage()
-        while getgenv().SwordSimulator.AutoDamage do
-            local success, err = pcall(function()
-                --ReplicatedStorage.Remotes.Weapon.TakeDamage:FireServer()
-        local player = game.Players.LocalPlayer
-        local character = player.Character
-        local ServerBehaviour = game:GetService("ReplicatedStorage").Remotes.Skill.ServerBehaviour
-            local characterPosition = character.HumanoidRootPart.Position
-            ServerBehaviour:FireServer(false, characterPosition)
-            end)
-            if not success then
-                print("Error in AutoDamage: ", err)
-            end
-            wait(0.001)
-        end
-    end
+  function AutoDamage()
+    while getgenv().SwordSimulator.AutoDamage == true do
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Weapon"):WaitForChild("TakeDamage"):FireServer()
+        wait(.001)
+end
+      end
     
   
   function KillAura()
@@ -100,8 +90,6 @@ function GetCodes()
     wait(3)
     game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Reward"):WaitForChild("CodeReward"):FireServer("welcome")
     wait(3)
-	game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Reward"):WaitForChild("CodeReward"):FireServer("0.5mlike")
-    wait(3)
     
 end
 end
@@ -122,88 +110,133 @@ function RaidGem()
 end
 
 function W8L1()
-        success, err = pcall(function()
+success, err = pcall(function()
             local args = {
-           [1] = true,
-            [2] = Vector3.new(-87.6982650756836, 4.643090724945068, -1382.11083984375)
-        }
+                false,
+                {
+                    workspace:WaitForChild("Train"):WaitForChild("8"):WaitForChild("6029"):WaitForChild("HitBox"),
+                    Players.LocalPlayer.Character.HumanoidRootPart,
+                    Players.LocalPlayer.Character.UpperTorso,
+                    Players.LocalPlayer.Character.LowerTorso,
+                    Players.LocalPlayer.Character.RightUpperArm,
+                    Players.LocalPlayer.Character.RightLowerArm,
+                    Players.LocalPlayer.Character.RightUpperLeg,
+                    Players.LocalPlayer.Character.LeftHand,
+                    Players.LocalPlayer.Character.RightHand
+                }
+            }
             ReplicatedStorage.Remotes.Skill.ServerBehaviour:FireServer(unpack(args))
         end)
         if not success then
             print("Error in W8L1: ", err)
         end
-        wait(0.6)
+        wait(0.1)
     end
 
 function W8L249()
-        success, err = pcall(function()
+success, err = pcall(function()
             local args = {
-                [1] = true,
-                [2] = Vector3.new(-107.0389633178711, 4.4632182121276855, -1382.79638671875)
-        }
+                false,
+                {
+                    workspace:WaitForChild("Train"):WaitForChild("8"):WaitForChild("6030"):WaitForChild("HitBox"),
+                    Players.LocalPlayer.Character.HumanoidRootPart,
+                    Players.LocalPlayer.Character.UpperTorso,
+                    Players.LocalPlayer.Character.LowerTorso,
+                    Players.LocalPlayer.Character.RightUpperArm,
+                    Players.LocalPlayer.Character.RightLowerArm,
+                    Players.LocalPlayer.Character.RightUpperLeg,
+                    Players.LocalPlayer.Character.LeftHand,
+                    Players.LocalPlayer.Character.RightHand
+                }
+            }
             ReplicatedStorage.Remotes.Skill.ServerBehaviour:FireServer(unpack(args))
         end)
         if not success then
             print("Error in W8L249: ", err)
         end
-        wait(0.6)
+        wait(0.1)
     end
 
 function W8L285()
-        success, err = pcall(function()
+success, err = pcall(function()
             local args = {
-                [1] = true,
-                [2] = Vector3.new(-129.45223999023438, 9.229759216308594, -1382.054931640625)
-        }
+                false,
+                {
+                    workspace:WaitForChild("Train"):WaitForChild("8"):WaitForChild("6031"):WaitForChild("HitBox"),
+                    Players.LocalPlayer.Character.HumanoidRootPart,
+                    Players.LocalPlayer.Character.UpperTorso,
+                    Players.LocalPlayer.Character.LowerTorso,
+                    Players.LocalPlayer.Character.RightUpperArm,
+                    Players.LocalPlayer.Character.RightLowerArm,
+                    Players.LocalPlayer.Character.RightUpperLeg,
+                    Players.LocalPlayer.Character.LeftHand,
+                    Players.LocalPlayer.Character.RightHand
+                }
+            }
             ReplicatedStorage.Remotes.Skill.ServerBehaviour:FireServer(unpack(args))
         end)
         if not success then
             print("Error in W8L285: ", err)
         end
-        wait(0.6)
+        wait(0.1)
     end
 
 function W8VIP()
         success, err = pcall(function()
             local args = {
-                [1] = true,
-                [2] = Vector3.new(-106.70401000976562, 9.071269035339355, -1315.8131103515625)
-        }
-        ReplicatedStorage.Remotes.Skill.ServerBehaviour:FireServer(unpack(args))
+                false,
+                {
+                    workspace:WaitForChild("Train"):WaitForChild("8"):WaitForChild("6032"):WaitForChild("HitBox"),
+                    Players.LocalPlayer.Character.HumanoidRootPart,
+                    Players.LocalPlayer.Character.UpperTorso,
+                    Players.LocalPlayer.Character.LowerTorso,
+                    Players.LocalPlayer.Character.RightUpperArm,
+                    Players.LocalPlayer.Character.RightLowerArm,
+                    Players.LocalPlayer.Character.RightUpperLeg,
+                    Players.LocalPlayer.Character.LeftHand,
+                    Players.LocalPlayer.Character.RightHand
+                }
+            }
+            ReplicatedStorage.Remotes.Skill.ServerBehaviour:FireServer(unpack(args))
         end)
         if not success then
             print("Error in W8VIP: ", err)
         end
-        wait(0.6)
+        wait(0.1)
     end
 
 function W8SVIP()
-    locations = {
-        {true, Vector3.new(-87.6982650756836, 4.643090724945068, -1382.11083984375)},
-        {true, Vector3.new(-107.0389633178711, 4.4632182121276855, -1382.79638671875)},
-        {true, Vector3.new(-129.45223999023438, 9.229759216308594, -1382.054931640625)},
-        {true, Vector3.new(-106.70401000976562, 9.071269035339355, -1315.8131103515625)}
-    }
+local args = {
+    [1] = true,
+    [2] = Vector3.new(-104.978515625, 4.449621677398682, -1314.7969970703125)
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
 
-    for _, location in ipairs(locations) do
-        success, err = pcall(function()
-            local args = {unpack(location)}
-            ReplicatedStorage.Remotes.Skill.ServerBehaviour:FireServer(unpack(args))
-        end)
-        if not success then
-            print("Error in W8Functions: ", err)
-        end
-        wait(0.6)
-    end
+args = {
+    [1] = true,
+    [2] = Vector3.new(-87.2535400390625, 4.425842761993408, -1379.9188232421875)
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
+
+args = {
+    [1] = true,
+    [2] = Vector3.new(-106.54766845703125, 4.398561477661133, -1381.0048828125)
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
+
+args = {
+    [1] = true,
+    [2] = Vector3.new(-128.076171875, 4.421252727508545, -1379.9239501953125)
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
+
+args = {
+    [1] = true,
+    [2] = Vector3.new(-123.13668060302734, 4.447671413421631, -1325.374267578125)
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
+wait(0.3)
 end
-
-function Teleport(world)
-    	local args = {
-        	[1] = world
-    	}
-    	ReplicatedStorage.Remotes.Common.Door.Teleport:FireServer(unpack(args))
-	end
-
 
 -- Toggles
 local Tab = Window:MakeTab({
@@ -236,12 +269,6 @@ local W8Tab = Window:MakeTab({
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
-
-local TELTab = Window:MakeTab({
-        Name = "Teleport",
-        Icon = "rbxassetid://4483345998",
-        PremiumOnly = false
-    })
 
 -- Tabs
   Tab:AddToggle({
@@ -337,7 +364,7 @@ W8Tab:AddButton({
 end
 })
 
-W8Tab:AddButton({
+W8Tab:AddToggle({
     Name = "VIP DUMMY XP FARM",
     Default = false,
     Callback = function(Value)
@@ -351,8 +378,8 @@ end
 	  
 })
 
-W8Tab:AddButton({
-    Name = "INFINITY STONE XP FARM?",
+W8Tab:AddToggle({
+    Name = "INFINITY STONE XP FARM",
     Default = false,
     Callback = function(Value)
       getgenv().SwordSimulator.W8SVIP = Value 
@@ -368,85 +395,10 @@ end
 SnowTab:AddButton({
 	Name = "Obby Teleport",
 	Callback = function()
-	position = Vector3.new(140, 48, -2473)
-	local character = game.Players.LocalPlayer.Character or Players.LocalPlayer.CharacterAdded:Wait()
-	character:SetPrimaryPartCFrame(CFrame.new(position))
-	wait(5)
-	position = Vector3.new(-83, 116, -2865)
-	local character = game.Players.LocalPlayer.Character or Players.LocalPlayer.CharacterAdded:Wait()
-	character:SetPrimaryPartCFrame(CFrame.new(position))
+      position = Vector3.new(-88.28643798828125, 103.42346954345703, -2862.521240234375)
+    local character = game.Players.LocalPlayer.Character or Players.LocalPlayer.CharacterAdded:Wait()
+    character:SetPrimaryPartCFrame(CFrame.new(position))
   	end    
-})
-
-TELTab:AddButton({
-	Name = "AFK WORLD",
-	Callback = function(Value)
-		Teleport(0)
-	  end
-})
-
-TELTab:AddButton({
-	Name = "Backroom",
-	Callback = function(Value)
-		Teleport(998)
-	  end
-})
-
-TELTab:AddButton({
-	Name = "FOREST (W1)",
-	Callback = function(Value)
-		Teleport(1)
-	  end
-})
-
-TELTab:AddButton({
-	Name = "DESERT (W2)",
-	Callback = function(Value)
-		Teleport(2)
-	  end
-})
-
-TELTab:AddButton({
-	Name = "BEACH (W3)",
-	Callback = function(Value)
-		Teleport(3)
-	  end
-})
-
-
-TELTab:AddButton({
-	Name = "SNOW (W4)",
-	Callback = function(Value)
-		Teleport(4)
-	  end
-})
-
-TELTab:AddButton({
-	Name = "VOLCANO (W5)",
-	Callback = function(Value)
-		Teleport(5)
-	  end
-})
-
-TELTab:AddButton({
-	Name = "CASTLE (W6)",
-	Callback = function(Value)
-		Teleport(6)
-	  end
-})
-
-TELTab:AddButton({
-	Name = "CANDY (W7",
-	Callback = function(Value)
-		Teleport(7)
-	  end
-})
-
-TELTab:AddButton({
-	Name = "GARDEN (W8)",
-	Callback = function(Value)
-		Teleport(8)
-	  end
 })
 
 end
