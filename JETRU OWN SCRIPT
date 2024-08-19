@@ -90,6 +90,8 @@ function GetCodes()
     wait(3)
     game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Reward"):WaitForChild("CodeReward"):FireServer("welcome")
     wait(3)
+	game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Reward"):WaitForChild("CodeReward"):FireServer("0.5mlike")
+    wait(3)
     
 end
 end
