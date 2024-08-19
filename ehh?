@@ -1,0 +1,72 @@
+-- Global settings for SwordSimulator
+getgenv().SwordSimulator = {
+    AutoDamage = false,
+    KillAura = false,
+    ClaimGift = false,
+    GetCodes = false,
+    MazeGem = false,
+    RaidGem = false,
+    W8L1 = false,
+    W8L249 = false,
+    W8L285 = false,
+    W8VIP = false,
+    W8SVIP = true
+}
+
+local argumentSets = {
+        {[1] = true, [2] = Vector3.new(-1012.8035278320312, 3.8871304988861084, -4818.76171875)},
+        {[1] = true, [2] = Vector3.new(-2216.6552734375, 3.8654520511627197, -4818.8310546875)},
+        {[1] = true, [2] = Vector3.new(-3452.474853515625, 7.9895405769348145, -4818.8857421875)}
+}
+
+local ServerBehaviour = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour")
+
+-- Execute the argument sets
+for _, args in pairs(argumentSets) do
+    ServerBehaviour:FireServer(unpack(args))
+    wait(0.1)  -- Wait for 0.6 seconds between each request
+end
+
+-- Define the W8SVIP function
+local function W8SVIP()
+    -- Replace with actual functionality
+    local argumentSets = {
+        {[1] = true, [2] = Vector3.new(-1012.8035278320312, 3.8871304988861084, -4818.76171875)},
+        {[1] = true, [2] = Vector3.new(-2216.6552734375, 3.8654520511627197, -4818.8310546875)},
+        {[1] = true, [2] = Vector3.new(-3452.474853515625, 7.9895405769348145, -4818.8857421875)}
+}
+
+    local ServerBehaviour = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour")
+
+    -- Execute the argument sets
+    for _, args in pairs(argumentSets) do
+        ServerBehaviour:FireServer(unpack(args))
+        wait(0.1)  -- Wait for 0.6 seconds between each request
+    end
+end
+
+-- Function to continuously check and execute W8SVIP
+local function checkAndExecute()
+    while true do
+        if getgenv().SwordSimulator.W8SVIP then
+            W8SVIP()
+            print("Executing W8SVIP function")
+        end
+        wait(0.1)  -- Check periodically
+    end
+end
+
+-- Start the continuous check and execute function
+spawn(function()
+    print("Starting checkAndExecute in a new thread")
+    checkAndExecute()
+end)
+
+-- For testing: Set W8SVIP to true after a delay
+wait(2)  -- Wait for 2 seconds before starting
+print("Setting W8SVIP to true")
+getgenv().SwordSimulator.W8SVIP = true
+
+-- For testing: Set W8SVIP to true after a delay
+wait(10)  -- Run for 10 seconds
+print("W8SVIP will remain true")
