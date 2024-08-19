@@ -27,12 +27,22 @@ W8SVIP = false;
   };
   
 -- Functions
-  function AutoDamage()
-    while getgenv().SwordSimulator.AutoDamage == true do
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Weapon"):WaitForChild("TakeDamage"):FireServer()
-        wait(.001)
-end
-      end
+  local function AutoDamage()
+        while getgenv().SwordSimulator.AutoDamage do
+            local success, err = pcall(function()
+                --ReplicatedStorage.Remotes.Weapon.TakeDamage:FireServer()
+        local player = game.Players.LocalPlayer
+        local character = player.Character
+        local ServerBehaviour = game:GetService("ReplicatedStorage").Remotes.Skill.ServerBehaviour
+            local characterPosition = character.HumanoidRootPart.Position
+            ServerBehaviour:FireServer(false, characterPosition)
+            end)
+            if not success then
+                print("Error in AutoDamage: ", err)
+            end
+            wait(0.001)
+        end
+    end
     
   
   function KillAura()
@@ -89,6 +99,8 @@ function GetCodes()
     game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Reward"):WaitForChild("CodeReward"):FireServer("like400k")
     wait(3)
     game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Reward"):WaitForChild("CodeReward"):FireServer("welcome")
+    wait(3)
+	game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Reward"):WaitForChild("CodeReward"):FireServer("0.5mlike")
     wait(3)
     
 end
@@ -185,6 +197,14 @@ function W8SVIP()
     end
 end
 
+function Teleport(world)
+    	local args = {
+        	[1] = world
+    	}
+    	ReplicatedStorage.Remotes.Common.Door.Teleport:FireServer(unpack(args))
+	end
+
+
 -- Toggles
 local Tab = Window:MakeTab({
 	Name = "Farm",
@@ -216,6 +236,12 @@ local W8Tab = Window:MakeTab({
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
+
+local TELTab = Window:MakeTab({
+        Name = "Teleport",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    })
 
 -- Tabs
   Tab:AddToggle({
@@ -350,6 +376,77 @@ SnowTab:AddButton({
 	local character = game.Players.LocalPlayer.Character or Players.LocalPlayer.CharacterAdded:Wait()
 	character:SetPrimaryPartCFrame(CFrame.new(position))
   	end    
+})
+
+TELTab:AddButton({
+	Name = "AFK WORLD",
+	Callback = function(Value)
+		Teleport(0)
+	  end
+})
+
+TELTab:AddButton({
+	Name = "Backroom",
+	Callback = function(Value)
+		Teleport(998)
+	  end
+})
+
+TELTab:AddButton({
+	Name = "FOREST (W1)",
+	Callback = function(Value)
+		Teleport(1)
+	  end
+})
+
+TELTab:AddButton({
+	Name = "DESERT (W2)",
+	Callback = function(Value)
+		Teleport(2)
+	  end
+})
+
+TELTab:AddButton({
+	Name = "BEACH (W3)",
+	Callback = function(Value)
+		Teleport(3)
+	  end
+})
+
+
+TELTab:AddButton({
+	Name = "SNOW (W4)",
+	Callback = function(Value)
+		Teleport(4)
+	  end
+})
+
+TELTab:AddButton({
+	Name = "VOLCANO (W5)",
+	Callback = function(Value)
+		Teleport(5)
+	  end
+})
+
+TELTab:AddButton({
+	Name = "CASTLE (W6)",
+	Callback = function(Value)
+		Teleport(6)
+	  end
+})
+
+TELTab:AddButton({
+	Name = "CANDY (W7",
+	Callback = function(Value)
+		Teleport(7)
+	  end
+})
+
+TELTab:AddButton({
+	Name = "GARDEN (W8)",
+	Callback = function(Value)
+		Teleport(8)
+	  end
 })
 
 end
