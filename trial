@@ -24,16 +24,25 @@ W8L249 = false;
 W8L285 = false;
 W8VIP = false;
 W8SVIP = false;
-W8SKILL = false;
   };
   
 -- Functions
-  function AutoDamage()
-    while getgenv().SwordSimulator.AutoDamage == true do
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Weapon"):WaitForChild("TakeDamage"):FireServer()
-        wait(.001)
-end
-      end
+  local function AutoDamage()
+        while getgenv().SwordSimulator.AutoDamage do
+            local success, err = pcall(function()
+                --ReplicatedStorage.Remotes.Weapon.TakeDamage:FireServer()
+        local player = game.Players.LocalPlayer
+        local character = player.Character
+        local ServerBehaviour = game:GetService("ReplicatedStorage").Remotes.Skill.ServerBehaviour
+            local characterPosition = character.HumanoidRootPart.Position
+            ServerBehaviour:FireServer(false, characterPosition)
+            end)
+            if not success then
+                print("Error in AutoDamage: ", err)
+            end
+            wait(0.001)
+        end
+    end
     
   
   function KillAura()
@@ -188,48 +197,6 @@ function W8SVIP()
     end
 end
 
--- Get the character's position
-local character = game.Players.LocalPlayer.Character
-local characterPosition = character.HumanoidRootPart.Position
-
--- Define the W8SVIP function
-local function W8SKILL()
-    -- Get the character's position
-    local characterPosition = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
-
-    -- Replace with actual functionality
-    local ServerBehaviour = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour")
-
-    -- Execute the argument sets
-    ServerBehaviour:FireServer(false, characterPosition)
-    wait(0.1)  -- Wait for 0.6 seconds between each request
-end
-
--- Function to continuously check and execute W8SKILL
-local function checkAndExecute()
-    while true do
-        if getgenv().SwordSimulator.W8SKILL then
-            W8SKILL()
-        end
-        wait(0.1)  -- Check periodically
-    end
-end
-
--- Start the continuous check and execute function
-spawn(function()
-    print("Starting checkAndExecute in a new thread")
-    checkAndExecute()
-end)
-
--- For testing: Set W8SVIP to true after a delay
-wait(2)  -- Wait for 2 seconds before starting
-print("Setting W8SKILL AURA to true")
-getgenv().SwordSimulator.W8SKILL = true
-
--- For testing: Set W8SVIP to true after a delay
-wait(10)  -- Run for 10 seconds
-print("W8SKILL AURA will remain true")
-
 function Teleport(world)
     	local args = {
         	[1] = world
@@ -238,7 +205,7 @@ function Teleport(world)
 	end
 
 
--- TABS
+-- Toggles
 local Tab = Window:MakeTab({
 	Name = "Farm",
 	Icon = "rbxassetid://15403180883",
@@ -276,7 +243,7 @@ local TELTab = Window:MakeTab({
         PremiumOnly = false
     })
 
--- TOGGLES
+-- Tabs
   Tab:AddToggle({
 	Name = "Auto Damage",
 	Default = false,
@@ -288,15 +255,6 @@ local TELTab = Window:MakeTab({
 
 Tab:AddToggle({
 	Name = "Kill Aura",
-	Default = false,
-	Callback = function(Value)
-	  getgenv().SwordSimulator.KillAura = Value
-	  if Value then KillAura() end
-	end    
-})
-
-Tab:AddToggle({
-	Name = "Skill Aura",
 	Default = false,
 	Callback = function(Value)
 	  getgenv().SwordSimulator.KillAura = Value
