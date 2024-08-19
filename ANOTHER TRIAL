@@ -286,11 +286,16 @@ MISCTab.newToggle("GET CODES", "GET GAME CODES", false, function(toggleState)
     end
 end)
 
-XPTab.newButton("LVL1 XP DUMMY", "AUTO XP DUH", function()
-     getgenv().SwordSimulator.W1L1()
-    pcall(function()
-        W1L1()  -- Call the W1L1 function safely
-    end)
+XPTab.newToggle("LVL1 XP DUMMY", "AUTO XP DUH", false, function(toggleState)
+    getgenv().SwordSimulator.W1L1 = toggleState
+    if toggleState then
+        spawn(function()
+            while getgenv().SwordSimulator.W1L1 do
+                pcall(function() W1L1() end)
+                wait(0.1)
+            end
+        end)
+    end
 end)
 
 --WORLD TELEPORT BUTTONS
