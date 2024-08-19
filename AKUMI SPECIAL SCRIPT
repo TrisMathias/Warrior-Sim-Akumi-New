@@ -299,8 +299,8 @@ XPTab.newToggle("LVL1 XP DUMMY", "AUTO XP DUH", false, function(toggleState)
 end)
 
 --WORLD TELEPORT BUTTONS
-WORLDSTab.newButton("FOREST (W1)", "TELEPORTS TO FOREST", function()
-    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Door"):WaitForChild("Teleport"):FireServer(1)
+WORLDSTab.newButton("BACKROOM (BR)", "TELEPORTS TO FOREST", function()
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Door"):WaitForChild("Teleport"):FireServer(998)
 end)
 
 WORLDSTab.newButton("DESERT (W2)", "TELEPORTS TO DESERT", function()
