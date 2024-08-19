@@ -287,12 +287,11 @@ MISCTab.newToggle("GET CODES", "GET GAME CODES", false, function(toggleState)
 end)
 
 XPTab.newButton("LVL1 XP DUMMY", "AUTO XP DUH", function()
-    -- This function will be called every time the button is clicked
+     getgenv().SwordSimulator.W1L1()
     pcall(function()
         W1L1()  -- Call the W1L1 function safely
     end)
 end)
-       
 
 --WORLD TELEPORT BUTTONS
 WORLDSTab.newButton("FOREST (W1)", "TELEPORTS TO FOREST", function()
