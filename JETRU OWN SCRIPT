@@ -27,22 +27,12 @@ W8SVIP = false;
   };
   
 -- Functions
-  local function AutoDamage()
-        while getgenv().SwordSimulator.AutoDamage do
-            local success, err = pcall(function()
-                --ReplicatedStorage.Remotes.Weapon.TakeDamage:FireServer()
-        local player = game.Players.LocalPlayer
-        local character = player.Character
-        local ServerBehaviour = game:GetService("ReplicatedStorage").Remotes.Skill.ServerBehaviour
-            local characterPosition = character.HumanoidRootPart.Position
-            ServerBehaviour:FireServer(false, characterPosition)
-            end)
-            if not success then
-                print("Error in AutoDamage: ", err)
-            end
-            wait(0.001)
-        end
-    end
+  function AutoDamage()
+    while getgenv().SwordSimulator.AutoDamage == true do
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Weapon"):WaitForChild("TakeDamage"):FireServer()
+        wait(.001)
+end
+      end
     
   
   function KillAura()
@@ -99,8 +89,6 @@ function GetCodes()
     game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Reward"):WaitForChild("CodeReward"):FireServer("like400k")
     wait(3)
     game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Reward"):WaitForChild("CodeReward"):FireServer("welcome")
-    wait(3)
-	game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Reward"):WaitForChild("CodeReward"):FireServer("0.5mlike")
     wait(3)
     
 end
@@ -250,14 +238,12 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill
 wait(0.3)
 end
 
-
 function Teleport(world)
     	local args = {
         	[1] = world
     	}
     	ReplicatedStorage.Remotes.Common.Door.Teleport:FireServer(unpack(args))
 	end
-
 
 -- Toggles
 local Tab = Window:MakeTab({
@@ -422,13 +408,9 @@ end
 SnowTab:AddButton({
 	Name = "Obby Teleport",
 	Callback = function()
-	position = Vector3.new(140, 48, -2473)
-	local character = game.Players.LocalPlayer.Character or Players.LocalPlayer.CharacterAdded:Wait()
-	character:SetPrimaryPartCFrame(CFrame.new(position))
-	wait(5)
-	position = Vector3.new(-83, 116, -2865)
-	local character = game.Players.LocalPlayer.Character or Players.LocalPlayer.CharacterAdded:Wait()
-	character:SetPrimaryPartCFrame(CFrame.new(position))
+      position = Vector3.new(-88.28643798828125, 103.42346954345703, -2862.521240234375)
+    local character = game.Players.LocalPlayer.Character or Players.LocalPlayer.CharacterAdded:Wait()
+    character:SetPrimaryPartCFrame(CFrame.new(position))
   	end    
 })
 
