@@ -27,12 +27,22 @@ W8SVIP = false;
   };
   
 -- Functions
-  function AutoDamage()
-    while getgenv().SwordSimulator.AutoDamage == true do
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Weapon"):WaitForChild("TakeDamage"):FireServer()
-        wait(.001)
-end
-      end
+  local function AutoDamage()
+        while getgenv().SwordSimulator.AutoDamage do
+            local success, err = pcall(function()
+                --ReplicatedStorage.Remotes.Weapon.TakeDamage:FireServer()
+        local player = game.Players.LocalPlayer
+        local character = player.Character
+        local ServerBehaviour = game:GetService("ReplicatedStorage").Remotes.Skill.ServerBehaviour
+            local characterPosition = character.HumanoidRootPart.Position
+            ServerBehaviour:FireServer(false, characterPosition)
+            end)
+            if not success then
+                print("Error in AutoDamage: ", err)
+            end
+            wait(0.001)
+        end
+    end
     
   
   function KillAura()
