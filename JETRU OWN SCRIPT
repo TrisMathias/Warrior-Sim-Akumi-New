@@ -1,5 +1,5 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-  local Window = OrionLib:MakeWindow({Name = "Akumi Scripts | Sword Simulator [BETA] ", HidePremium = false, IntroText = "SECRETIVE AKUMI Scripts", SaveConfig = true, ConfigFolder = "OrionTest"})
+  local Window = OrionLib:MakeWindow({Name = ".", HidePremium = false, IntroText = "SECRETIVE AKUMI Scripts", SaveConfig = true, ConfigFolder = "OrionTest"})
   local ReplicatedStorage, RunService, Workspace, Lighting, Players = game:GetService("ReplicatedStorage"), game:GetService("RunService"), game:GetService("Workspace"), game:GetService("Lighting"), game:GetService("Players")
 if game.PlaceId == 16436007861 
 or game.PlaceId == 17856546976
