@@ -418,9 +418,13 @@ end
 SnowTab:AddButton({
 	Name = "Obby Teleport",
 	Callback = function()
-      position = Vector3.new(-88.28643798828125, 103.42346954345703, -2862.521240234375)
-    local character = game.Players.LocalPlayer.Character or Players.LocalPlayer.CharacterAdded:Wait()
-    character:SetPrimaryPartCFrame(CFrame.new(position))
+	position = Vector3.new(140, 48, -2473)
+	local character = game.Players.LocalPlayer.Character or Players.LocalPlayer.CharacterAdded:Wait()
+	character:SetPrimaryPartCFrame(CFrame.new(position))
+	wait(5)
+	position = Vector3.new(-83, 116, -2865)
+	local character = game.Players.LocalPlayer.Character or Players.LocalPlayer.CharacterAdded:Wait()
+	character:SetPrimaryPartCFrame(CFrame.new(position))
   	end    
 })
 
