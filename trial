@@ -18,7 +18,7 @@ OrionLib:MakeNotification({
 })
 
 -- Test Global Variables
-_G.Key = {HINDOT = "HINDOT", HI = "HI"}
+_G.Key = {"JESUS", "HELLO"}
 _G.KeyInput = ""
 
 local function LoadTestHub()
@@ -63,7 +63,7 @@ KeySystemTab:AddTextbox({
 KeySystemTab:AddButton({
     Name = "Check Key!",
     Callback = function()
-        if _G.KeyInput == _G.Key.HI or _G.KeyInput == _G.Key.HELLO then
+        if table.find(_G.Key, _G.KeyInput) then
             ShowCorrectKeyNotification()
             wait(2)
             OrionLib:Destroy()
