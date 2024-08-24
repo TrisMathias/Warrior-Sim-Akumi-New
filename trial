@@ -1,27 +1,74 @@
-local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
-local Window = Rayfield:CreateWindow({
-   Name = "Rayfield Example Window",
-   LoadingTitle = "Rayfield Interface Suite",
-   LoadingSubtitle = "by Sirius",
-   ConfigurationSaving = {
-      Enabled = true,
-      FolderName = nil, -- Create a custom folder for your hub/game
-      FileName = "Big Hub"
-   },
-   Discord = {
-      Enabled = false,
-      Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
-      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
-   },
-   KeySystem = false, -- Set this to true to use our key system
-   KeySettings = {
-      Title = "Untitled",
-      Subtitle = "Key System",
-      Note = "No method of obtaining the key is provided",
-      FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
-      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
-      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
-      Key = {"Hello"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
-   }
+-- AKUMI HUB KEY SYSTEM ORION LIBRARY --
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Player = game.Players.LocalPlayer
+
+-- Test Main Window
+local MainWindow = OrionLib:MakeWindow({
+    Name = "SCRIPT KEY",
+    HidePremium = false,
+    SaveConfig = true,
+    IntroEnabled = false
 })
+
+OrionLib:MakeNotification({
+    Name = "Welcome To AKUMI KEY!",
+    Content = "You Are Logged In As "..Player.Name..".",
+    Image = "rbxassetid://4483345998",
+    Time = 5
+})
+
+-- Test Global Variables
+_G.Key = "BILAT"
+_G.KeyInput = ""
+
+local function LoadTestHub()
+    -- This function is now empty since all other content has been removed.
 end
+
+-- Notifications
+local function ShowCorrectKeyNotification()
+    OrionLib:MakeNotification({
+        Name = "Correct Key!",
+        Content = "Loading Test Hub...",
+        Image = "rbxassetid://4483345998",
+        Time = 2
+    })
+end
+
+local function ShowIncorrectKeyNotification()
+    OrionLib:MakeNotification({
+        Name = "Incorrect Key!",
+        Content = "Enter The Correct Key.",
+        Image = "rbxassetid://4483345998",
+        Time = 2
+    })
+end
+
+-- Key System
+local KeySystemTab = MainWindow:MakeTab({
+    Name = "Key System",
+    Icon = "rbxassetid://2790551206",
+    PremiumOnly = false
+})
+
+KeySystemTab:AddTextbox({
+    Name = "Enter Key Here!",
+    Default = "Key",
+    TextDisappear = true,
+    Callback = function(Value)
+        _G.KeyInput = Value
+    end    
+})
+
+KeySystemTab:AddButton({
+    Name = "Check Key!",
+    Callback = function()
+        if _G.KeyInput == _G.Key then
+            ShowCorrectKeyNotification()
+            wait(2)
+            LoadTestHub()
+        else
+            ShowIncorrectKeyNotification()
+        end
+    end    
+})
