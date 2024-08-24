@@ -22,7 +22,9 @@ _G.Key = "BILAT"
 _G.KeyInput = ""
 
 local function LoadTestHub()
-    -- This function is now empty since all other content has been removed.
+    OrionLib:Destroy()
+wait(2)
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TrisMathias/Warrior-Sim-Akumi-New/main/JETRU%20OWN%20SCRIPT"))()
 end
 
 -- Notifications
