@@ -18,7 +18,7 @@ OrionLib:MakeNotification({
 })
 
 -- Test Global Variables
-_G.Key = "BILAT"
+_G.Key = "BILAT", "SALSAL"
 _G.KeyInput = ""
 
 local function LoadTestHub()
@@ -53,8 +53,8 @@ local KeySystemTab = MainWindow:MakeTab({
 
 KeySystemTab:AddTextbox({
     Name = "Enter Key Here!",
-    Default = "",
-    TextDisappear = false,
+    Default = "Input",
+    TextDisappear = true,
     Callback = function(Value)
         _G.KeyInput = Value
     end    
