@@ -18,7 +18,7 @@ OrionLib:MakeNotification({
 })
 
 -- Test Global Variables
-_G.Key = "HELLO", "HI"
+_G.Key = {HI = "HI", HELLO = "HELLO"}
 _G.KeyInput = ""
 
 local function LoadTestHub()
@@ -63,7 +63,7 @@ KeySystemTab:AddTextbox({
 KeySystemTab:AddButton({
     Name = "Check Key!",
     Callback = function()
-        if _G.KeyInput == _G.Key then
+        if _G.KeyInput == _G.Key.HI or _G.KeyInput == _G.Key.HELLO then
             ShowCorrectKeyNotification()
             wait(2)
             OrionLib:Destroy()
