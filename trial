@@ -18,7 +18,7 @@ OrionLib:MakeNotification({
 })
 
 -- Test Global Variables
-_G.Key = "HELLO"
+_G.Key = "HELLO", "HI"
 _G.KeyInput = ""
 
 local function LoadTestHub()
