@@ -53,8 +53,8 @@ local KeySystemTab = MainWindow:MakeTab({
 
 KeySystemTab:AddTextbox({
     Name = "Enter Key Here!",
-    Default = "Key",
-    TextDisappear = true,
+    Default = "",
+    TextDisappear = false,
     Callback = function(Value)
         _G.KeyInput = Value
     end    
