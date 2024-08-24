@@ -22,8 +22,6 @@ _G.Key = "BILAT"
 _G.KeyInput = ""
 
 local function LoadTestHub()
-    OrionLib:Destroy()
-wait(2)
     loadstring(game:HttpGet("https://raw.githubusercontent.com/TrisMathias/Warrior-Sim-Akumi-New/main/JETRU%20OWN%20SCRIPT"))()
 end
 
@@ -68,6 +66,8 @@ KeySystemTab:AddButton({
         if _G.KeyInput == _G.Key then
             ShowCorrectKeyNotification()
             wait(2)
+            OrionLib:Destroy()
+            wait(1)
             LoadTestHub()
         else
             ShowIncorrectKeyNotification()
