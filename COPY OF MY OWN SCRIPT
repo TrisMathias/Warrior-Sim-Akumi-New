@@ -1,0 +1,503 @@
+local OrionLib = loadstring(game:HttpGet(('https://pastebin.com/raw/WRUyYTdY')))()
+  local Window = OrionLib:MakeWindow({Name = "", HidePremium = false, IntroText = "SECRETIVE AKUMI Scripts", SaveConfig = true, ConfigFolder = "OrionTest"})
+  local ReplicatedStorage, RunService, Workspace, Lighting, Players = game:GetService("ReplicatedStorage"), game:GetService("RunService"), game:GetService("Workspace"), game:GetService("Lighting"), game:GetService("Players")
+if game.PlaceId == 16436007861 
+or game.PlaceId == 17856546976
+or game.PlaceId == 17678973277
+or game.PlaceId == 17678973620
+or game.PlaceId == 17678973875
+or game.PlaceId == 17678974142
+or game.PlaceId == 17678974410
+or game.PlaceId == 17766697506
+or game.PlaceId == 18970398024 then
+  
+-- Values
+  getgenv().SwordSimulator = {
+    AutoDamage = false,
+    KillAura = false;
+  ClaimGift = false;
+  GetCodes = false;
+  MazeGem = false;
+  RaidGem = false;
+W8L1 = false;
+W8L249 = false;
+W8L285 = false;
+W8VIP = false;
+W8SVIP = false;
+  };
+  
+-- Functions
+  local function AutoDamage()
+        while getgenv().SwordSimulator.AutoDamage do
+            local success, err = pcall(function()
+                --ReplicatedStorage.Remotes.Weapon.TakeDamage:FireServer()
+        local player = game.Players.LocalPlayer
+        local character = player.Character
+        local ServerBehaviour = game:GetService("ReplicatedStorage").Remotes.Skill.ServerBehaviour
+            local characterPosition = character.HumanoidRootPart.Position
+            ServerBehaviour:FireServer(false, characterPosition)
+            end)
+            if not success then
+                print("Error in AutoDamage: ", err)
+            end
+            wait(0.001)
+        end
+    end
+    
+  
+  function KillAura()
+    while getgenv().SwordSimulator.KillAura == true do
+      while wait(15) do
+        getgenv().G = true
+getgenv().Creator = 'https://discord.gg/B3HqPPzFYr - HalloweenGaster'
+while getgenv().G and getgenv().Creator == 'https://discord.gg/B3HqPPzFYr - HalloweenGaster' do
+wait(1)
+sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", 112412400000)
+sethiddenproperty(game.Players.LocalPlayer, "MaxSimulationRadius", 112412400000)
+for i,d in pairs(game:GetService("Workspace"):GetDescendants()) do
+    if d.ClassName == 'Humanoid' and d.Parent.Name ~= game.Players.LocalPlayer.Name then
+        d.Health = 0
+    end
+end
+end
+end
+end
+end
+
+function ClaimGift()
+  while getgenv().SwordSimulator.ClaimGift == true do
+  
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Online"):WaitForChild("TryGetOnlineGift"):InvokeServer(1)
+  wait(3)
+
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Online"):WaitForChild("TryGetOnlineGift"):InvokeServer(2)
+  wait(3)
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Online"):WaitForChild("TryGetOnlineGift"):InvokeServer(3)
+  wait(3)
+  game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Online"):WaitForChild("TryGetOnlineGift"):InvokeServer(4)
+  wait(3)
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Online"):WaitForChild("TryGetOnlineGift"):InvokeServer(5)
+  wait(3)
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Online"):WaitForChild("TryGetOnlineGift"):InvokeServer(6)
+  wait(3)
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Online"):WaitForChild("TryGetOnlineGift"):InvokeServer(7)
+  wait(3)
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Online"):WaitForChild("TryGetOnlineGift"):InvokeServer(8 )
+  wait(3)
+ 
+end
+end
+
+function GetCodes()
+  while getgenv().SwordSimulator.GetCodes == true do
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Reward"):WaitForChild("CodeReward"):FireServer("like400k")
+    wait(3)
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Reward"):WaitForChild("CodeReward"):FireServer("welcome")
+    wait(3)
+    
+end
+end
+
+function MazeGem()
+  while getgenv().SwordSimulator.MazeGem == true do
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("BackRoom"):WaitForChild("CollectChest"):FireServer()
+    wait(2)
+  
+  end
+end
+
+function RaidGem()
+  while getgenv().SwordSimulator.RaidGem == true do
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("DailyShop"):WaitForChild("BuyItem"):FireServer(2)
+    wait(0.5)
+  end
+end
+
+function W8L1()
+success, err = pcall(function()
+            local args = {
+                false,
+                {
+                    workspace:WaitForChild("Train"):WaitForChild("8"):WaitForChild("6029"):WaitForChild("HitBox"),
+                    Players.LocalPlayer.Character.HumanoidRootPart,
+                    Players.LocalPlayer.Character.UpperTorso,
+                    Players.LocalPlayer.Character.LowerTorso,
+                    Players.LocalPlayer.Character.RightUpperArm,
+                    Players.LocalPlayer.Character.RightLowerArm,
+                    Players.LocalPlayer.Character.RightUpperLeg,
+                    Players.LocalPlayer.Character.LeftHand,
+                    Players.LocalPlayer.Character.RightHand
+                }
+            }
+            ReplicatedStorage.Remotes.Skill.ServerBehaviour:FireServer(unpack(args))
+        end)
+        if not success then
+            print("Error in W8L1: ", err)
+        end
+        wait(0.1)
+    end
+
+function W8L249()
+success, err = pcall(function()
+            local args = {
+                false,
+                {
+                    workspace:WaitForChild("Train"):WaitForChild("8"):WaitForChild("6030"):WaitForChild("HitBox"),
+                    Players.LocalPlayer.Character.HumanoidRootPart,
+                    Players.LocalPlayer.Character.UpperTorso,
+                    Players.LocalPlayer.Character.LowerTorso,
+                    Players.LocalPlayer.Character.RightUpperArm,
+                    Players.LocalPlayer.Character.RightLowerArm,
+                    Players.LocalPlayer.Character.RightUpperLeg,
+                    Players.LocalPlayer.Character.LeftHand,
+                    Players.LocalPlayer.Character.RightHand
+                }
+            }
+            ReplicatedStorage.Remotes.Skill.ServerBehaviour:FireServer(unpack(args))
+        end)
+        if not success then
+            print("Error in W8L249: ", err)
+        end
+        wait(0.1)
+    end
+
+function W8L285()
+success, err = pcall(function()
+            local args = {
+                false,
+                {
+                    workspace:WaitForChild("Train"):WaitForChild("8"):WaitForChild("6031"):WaitForChild("HitBox"),
+                    Players.LocalPlayer.Character.HumanoidRootPart,
+                    Players.LocalPlayer.Character.UpperTorso,
+                    Players.LocalPlayer.Character.LowerTorso,
+                    Players.LocalPlayer.Character.RightUpperArm,
+                    Players.LocalPlayer.Character.RightLowerArm,
+                    Players.LocalPlayer.Character.RightUpperLeg,
+                    Players.LocalPlayer.Character.LeftHand,
+                    Players.LocalPlayer.Character.RightHand
+                }
+            }
+            ReplicatedStorage.Remotes.Skill.ServerBehaviour:FireServer(unpack(args))
+        end)
+        if not success then
+            print("Error in W8L285: ", err)
+        end
+        wait(0.1)
+    end
+
+function W8VIP()
+        success, err = pcall(function()
+            local args = {
+                false,
+                {
+                    workspace:WaitForChild("Train"):WaitForChild("8"):WaitForChild("6032"):WaitForChild("HitBox"),
+                    Players.LocalPlayer.Character.HumanoidRootPart,
+                    Players.LocalPlayer.Character.UpperTorso,
+                    Players.LocalPlayer.Character.LowerTorso,
+                    Players.LocalPlayer.Character.RightUpperArm,
+                    Players.LocalPlayer.Character.RightLowerArm,
+                    Players.LocalPlayer.Character.RightUpperLeg,
+                    Players.LocalPlayer.Character.LeftHand,
+                    Players.LocalPlayer.Character.RightHand
+                }
+            }
+            ReplicatedStorage.Remotes.Skill.ServerBehaviour:FireServer(unpack(args))
+        end)
+        if not success then
+            print("Error in W8VIP: ", err)
+        end
+        wait(0.1)
+    end
+
+function W8SVIP()
+local args = {
+    [1] = true,
+    [2] = Vector3.new(-104.978515625, 4.449621677398682, -1314.7969970703125)
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
+
+args = {
+    [1] = true,
+    [2] = Vector3.new(-87.2535400390625, 4.425842761993408, -1379.9188232421875)
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
+
+args = {
+    [1] = true,
+    [2] = Vector3.new(-106.54766845703125, 4.398561477661133, -1381.0048828125)
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
+
+args = {
+    [1] = true,
+    [2] = Vector3.new(-128.076171875, 4.421252727508545, -1379.9239501953125)
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
+
+args = {
+    [1] = true,
+    [2] = Vector3.new(-123.13668060302734, 4.447671413421631, -1325.374267578125)
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
+wait(0.3)
+end
+
+function Teleport(world)
+    	local args = {
+        	[1] = world
+    	}
+    	ReplicatedStorage.Remotes.Common.Door.Teleport:FireServer(unpack(args))
+	end
+
+-- Toggles
+local Tab = Window:MakeTab({
+	Name = "Farm",
+	Icon = "rbxassetid://15403180883",
+	PremiumOnly = false
+})
+
+local MiscTab = Window:MakeTab({
+	Name = "Miscellanious",
+	Icon = "rbxassetid://15402939318",
+	PremiumOnly = false
+})
+
+local BRTab = Window:MakeTab({
+	Name = "Backrooms",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+
+})
+
+local SnowTab = Window:MakeTab({
+	Name = "Snow (World 4)",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local W8Tab = Window:MakeTab({
+	Name = "Garden (World 8)",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local TELTab = Window:MakeTab({
+        Name = "Teleport",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    })
+
+-- Tabs
+  Tab:AddToggle({
+	Name = "Auto Damage",
+	Default = false,
+	Callback = function(Value)
+	  getgenv().SwordSimulator.AutoDamage = Value
+	  if Value then AutoDamage() end
+	end    
+})
+
+Tab:AddToggle({
+	Name = "Kill Aura",
+	Default = false,
+	Callback = function(Value)
+	  getgenv().SwordSimulator.KillAura = Value
+	  if Value then KillAura() end
+	end    
+})
+
+MiscTab:AddToggle({
+	Name = "Claim Gifts",
+	Default = false,
+	Callback = function(Value)
+	  getgenv().SwordSimulator.ClaimGift = Value 
+	  if Value then ClaimGift() end
+end
+})
+
+MiscTab:AddToggle({
+	Name = "Get Codes",
+	Default = false,
+	Callback = function(Value)
+	  getgenv().SwordSimulator.GetCodes = Value 
+	  if Value then GetCodes() end
+end
+})
+
+BRTab:AddToggle({
+	Name = "Maze Gems(Back Rooms World)",
+	Default = false,
+	Callback = function(Value)
+	  getgenv().SwordSimulator.MazeGem = Value 
+	  if Value then MazeGem() end
+end
+})
+
+BRTab:AddToggle({
+	Name = "Raid Gems(Back Rooms World)",
+	Default = false,
+	Callback = function(Value)
+	  getgenv().SwordSimulator.RaidGem = Value 
+	  if Value then RaidGem() end
+end
+})
+
+W8Tab:AddButton({
+    Name = "LEVEL 1 DUMMY XP FARM",
+    Default = false,
+    Callback = function(Value)
+      getgenv().SwordSimulator.W8L1 = Value 
+      if Value then 
+        while Value do
+         W8L1() 
+        end 
+      end
+end
+})
+
+W8Tab:AddButton({
+    Name = "LEVEL 249 DUMMY XP FARM",
+    Default = false,
+    Callback = function(Value)
+      getgenv().SwordSimulator.W8L249 = Value 
+      if Value then 
+        while Value do
+         W8L249() 
+        end 
+      end
+end
+})
+
+W8Tab:AddButton({
+    Name = "LEVEL 285 DUMMY XP FARM",
+    Default = false,
+    Callback = function(Value)
+      getgenv().SwordSimulator.W8L285 = Value 
+      if Value then 
+        while Value do
+         W8L285() 
+        end 
+      end
+end
+})
+
+W8Tab:AddToggle({
+    Name = "VIP DUMMY XP FARM",
+    Default = false,
+    Callback = function(Value)
+      getgenv().SwordSimulator.W8VIP = Value 
+      if Value then 
+        while Value do
+         W8VIP() 
+        end 
+      end
+end
+	  
+})
+
+W8Tab:AddToggle({
+    Name = "INFINITY STONE XP FARM",
+    Default = false,
+    Callback = function(Value)
+      getgenv().SwordSimulator.W8SVIP = Value 
+      if Value then 
+        while Value do
+         W8SVIP() 
+        end 
+      end
+end
+	  
+})
+
+SnowTab:AddButton({
+	Name = "Obby Teleport",
+	Callback = function()
+	position = Vector3.new(140, 48, -2473)
+	local character = game.Players.LocalPlayer.Character or Players.LocalPlayer.CharacterAdded:Wait()
+	character:SetPrimaryPartCFrame(CFrame.new(position))
+	wait(5)
+	position = Vector3.new(-83, 116, -2865)
+	local character = game.Players.LocalPlayer.Character or Players.LocalPlayer.CharacterAdded:Wait()
+	character:SetPrimaryPartCFrame(CFrame.new(position))
+  	end    
+})
+
+TELTab:AddButton({
+	Name = "AFK WORLD",
+	Callback = function(Value)
+		Teleport(0)
+	  end
+})
+
+TELTab:AddButton({
+	Name = "Backroom",
+	Callback = function(Value)
+		Teleport(998)
+	  end
+})
+
+TELTab:AddButton({
+	Name = "FOREST (W1)",
+	Callback = function(Value)
+		Teleport(1)
+	  end
+})
+
+TELTab:AddButton({
+	Name = "DESERT (W2)",
+	Callback = function(Value)
+		Teleport(2)
+	  end
+})
+
+TELTab:AddButton({
+	Name = "BEACH (W3)",
+	Callback = function(Value)
+		Teleport(3)
+	  end
+})
+
+
+TELTab:AddButton({
+	Name = "SNOW (W4)",
+	Callback = function(Value)
+		Teleport(4)
+	  end
+})
+
+TELTab:AddButton({
+	Name = "VOLCANO (W5)",
+	Callback = function(Value)
+		Teleport(5)
+	  end
+})
+
+TELTab:AddButton({
+	Name = "CASTLE (W6)",
+	Callback = function(Value)
+		Teleport(6)
+	  end
+})
+
+TELTab:AddButton({
+	Name = "CANDY (W7",
+	Callback = function(Value)
+		Teleport(7)
+	  end
+})
+
+TELTab:AddButton({
+	Name = "GARDEN (W8)",
+	Callback = function(Value)
+		Teleport(8)
+	  end
+})
+
+end
+OrionLib:Init()
