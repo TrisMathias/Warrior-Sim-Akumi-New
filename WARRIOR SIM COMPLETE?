@@ -828,5 +828,117 @@ end
 	  
 })
 
+W2Tab:AddToggle({
+    Name = "INFINITY STONE XP FARM",
+    Default = false,
+    Callback = function(Value)
+      getgenv().SwordSimulator.W2DESERT = Value 
+      if Value then 
+        while Value do
+         W2DESERT() 
+        end 
+      end
+end
+	  
+})
+
+W3Tab:AddToggle({
+    Name = "INFINITY STONE XP FARM",
+    Default = false,
+    Callback = function(Value)
+      getgenv().SwordSimulator.W3BEACH = Value 
+      if Value then 
+        while Value do
+         W3BEACH() 
+        end 
+      end
+end
+	  
+})
+
+W4Tab:AddToggle({
+    Name = "INFINITY STONE XP FARM",
+    Default = false,
+    Callback = function(Value)
+      getgenv().SwordSimulator.W4SNOW = Value 
+      if Value then 
+        while Value do
+         W4SNOW() 
+        end 
+      end
+end
+	  
+})
+
+W5Tab:AddToggle({
+    Name = "INFINITY STONE XP FARM",
+    Default = false,
+    Callback = function(Value)
+      getgenv().SwordSimulator.W5VOLCANO = Value 
+      if Value then 
+        while Value do
+         W5VOLCANO() 
+        end 
+      end
+end
+	  
+})
+
+W6Tab:AddToggle({
+    Name = "INFINITY STONE XP FARM",
+    Default = false,
+    Callback = function(Value)
+      getgenv().SwordSimulator.W6CASTLE = Value 
+      if Value then 
+        while Value do
+         W6CASTLE() 
+        end 
+      end
+end
+	  
+})
+
+W7Tab:AddToggle({
+    Name = "INFINITY STONE XP FARM",
+    Default = false,
+    Callback = function(Value)
+      getgenv().SwordSimulator.W7CANDY = Value 
+      if Value then 
+        while Value do
+         W7CANDY() 
+        end 
+      end
+end
+	  
+})
+
+W8Tab:AddToggle({
+    Name = "INFINITY STONE XP FARM",
+    Default = false,
+    Callback = function(Value)
+      getgenv().SwordSimulator.W8GARDEN = Value 
+      if Value then 
+        while Value do
+         W8GARDEN() 
+        end 
+      end
+end
+	  
+})
+
+W9Tab:AddToggle({
+    Name = "INFINITY STONE XP FARM",
+    Default = false,
+    Callback = function(Value)
+      getgenv().SwordSimulator.W9MUSHROOM = Value 
+      if Value then 
+        while Value do
+         W9MUSHROOM() 
+        end 
+      end
+end
+	  
+})
+
 end
 OrionLib:Init()
