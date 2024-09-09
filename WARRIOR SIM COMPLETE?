@@ -815,7 +815,7 @@ TELTab:AddButton({
 })
 
 W1Tab:AddToggle({
-    Name = "INFINITY STONE XP FARM",
+    Name = "WORLD 1 XP FARM",
     Default = false,
     Callback = function(Value)
       getgenv().SwordSimulator.W1FOREST = Value 
@@ -829,7 +829,7 @@ end
 })
 
 W2Tab:AddToggle({
-    Name = "INFINITY STONE XP FARM",
+    Name = "WORLD 2 XP FARM",
     Default = false,
     Callback = function(Value)
       getgenv().SwordSimulator.W2DESERT = Value 
@@ -843,7 +843,7 @@ end
 })
 
 W3Tab:AddToggle({
-    Name = "INFINITY STONE XP FARM",
+    Name = "WORLD 3 XP FARM",
     Default = false,
     Callback = function(Value)
       getgenv().SwordSimulator.W3BEACH = Value 
@@ -857,7 +857,7 @@ end
 })
 
 W4Tab:AddToggle({
-    Name = "INFINITY STONE XP FARM",
+    Name = "WORLD 4 XP FARM",
     Default = false,
     Callback = function(Value)
       getgenv().SwordSimulator.W4SNOW = Value 
@@ -871,7 +871,7 @@ end
 })
 
 W5Tab:AddToggle({
-    Name = "INFINITY STONE XP FARM",
+    Name = "WORLD 5 XP FARM",
     Default = false,
     Callback = function(Value)
       getgenv().SwordSimulator.W5VOLCANO = Value 
@@ -885,7 +885,7 @@ end
 })
 
 W6Tab:AddToggle({
-    Name = "INFINITY STONE XP FARM",
+    Name = "WORLD 6 XP FARM",
     Default = false,
     Callback = function(Value)
       getgenv().SwordSimulator.W6CASTLE = Value 
@@ -899,7 +899,7 @@ end
 })
 
 W7Tab:AddToggle({
-    Name = "INFINITY STONE XP FARM",
+    Name = "WORLD 7 XP FARM",
     Default = false,
     Callback = function(Value)
       getgenv().SwordSimulator.W7CANDY = Value 
@@ -913,7 +913,7 @@ end
 })
 
 W8Tab:AddToggle({
-    Name = "INFINITY STONE XP FARM",
+    Name = "WORLD 8 XP FARM",
     Default = false,
     Callback = function(Value)
       getgenv().SwordSimulator.W8GARDEN = Value 
@@ -927,7 +927,7 @@ end
 })
 
 W9Tab:AddToggle({
-    Name = "INFINITY STONE XP FARM",
+    Name = "WORLD 9 XP FARM",
     Default = false,
     Callback = function(Value)
       getgenv().SwordSimulator.W9MUSHROOM = Value 
