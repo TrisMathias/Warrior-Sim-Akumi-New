@@ -39,12 +39,7 @@ W9MUSHROOM = false;
   local function AutoDamage()
         while getgenv().SwordSimulator.AutoDamage do
             local success, err = pcall(function()
-                --ReplicatedStorage.Remotes.Weapon.TakeDamage:FireServer()
-        local player = game.Players.LocalPlayer
-        local character = player.Character
-        local ServerBehaviour = game:GetService("ReplicatedStorage").Remotes.Skill.ServerBehaviour
-            local characterPosition = character.HumanoidRootPart.Position
-            ServerBehaviour:FireServer(false, characterPosition)
+                ReplicatedStorage.Remotes.Weapon.TakeDamage:FireServer()
             end)
             if not success then
                 print("Error in AutoDamage: ", err)
@@ -255,7 +250,7 @@ args = {
     [2] = Vector3.new(-130.92556762695312, 3.974299430847168, 313.18060302734375)
 }
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
-wait(0.3)
+wait(0.1)
 end
 
 function W2DESERT()
@@ -282,7 +277,7 @@ args = {
     [2] = Vector3.new(-91.02971649169922, 4.597945690155029, -440.90869140625)
 }
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
-wait(0.3)
+wait(0.1)
 end
 
 function W3BEACH()
@@ -309,7 +304,7 @@ args = {
     [2] = Vector3.new(-91.91819763183594, 8.476713180541992, -1312.2037353515625)
 }
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
-wait(0.3)
+wait(0.1)
 end
 
 function W4SNOW()
@@ -336,7 +331,7 @@ args = {
     [2] = Vector3.new(-80.30586242675781, 4.385013103485107, -2241.812255859375)
 }
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
-wait(0.3)
+wait(0.1)
 end
 
 function W5VOLCANO()
@@ -363,7 +358,7 @@ args = {
     [2] = Vector3.new(-98.67337799072266, 4.41960334777832, -3610.013671875)
 }
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
-wait(0.3)
+wait(0.1)
 end
 
 function W6CASTLE()
@@ -402,7 +397,7 @@ args = {
     [2] = Vector3.new(-61.144683837890625, 4.415806293487549, -4997.45166015625)
 }
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
-wait(0.3)
+wait(0.1)
 end
 
 function W7CANDY()
@@ -429,7 +424,7 @@ args = {
     [2] = Vector3.new(-478.6377868652344, 4.790433406829834, -8022.74658203125)
 }
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
-wait(0.3)
+wait(0.1)
 end
 
 function W8GARDEN()
@@ -456,7 +451,7 @@ args = {
     [2] = Vector3.new(-95.8709487915039, 4.421383380889893, -1313.84814453125)
 }
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
-wait(0.3)
+wait(0.1)
 end
 
 function W9MUSHROOM()
@@ -483,7 +478,7 @@ args = {
     [2] = Vector3.new(-106.34468841552734, 4.429937839508057, -1314.6871337890625)
 }
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
-wait(0.3)
+wait(0.1)
 end
 
 
