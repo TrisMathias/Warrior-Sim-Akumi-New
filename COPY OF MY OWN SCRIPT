@@ -24,7 +24,6 @@ W8L1 = false;
 W8L249 = false;
 W8L285 = false;
 W8VIP = false;
-W8SVIP = false;
 W1FOREST = false;
 W2DESERT = false;
 W3BEACH = false;
@@ -225,41 +224,7 @@ function W8VIP()
         wait(0.1)
     end
 
-function W8SVIP()
-local args = {
-    [1] = true,
-    [2] = Vector3.new(-104.978515625, 4.449621677398682, -1314.7969970703125)
-}
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
-
-args = {
-    [1] = true,
-    [2] = Vector3.new(-87.2535400390625, 4.425842761993408, -1379.9188232421875)
-}
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
-
-args = {
-    [1] = true,
-    [2] = Vector3.new(-106.54766845703125, 4.398561477661133, -1381.0048828125)
-}
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
-
-args = {
-    [1] = true,
-    [2] = Vector3.new(-128.076171875, 4.421252727508545, -1379.9239501953125)
-}
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
-
-args = {
-    [1] = true,
-    [2] = Vector3.new(-123.13668060302734, 4.447671413421631, -1325.374267578125)
-}
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
-wait(0.3)
-end
-
-
-function Teleport(world)
+function TELEPORT(world)
     	local args = {
         	[1] = world
     	}
@@ -541,19 +506,68 @@ local BRTab = Window:MakeTab({
 	PremiumOnly = false
 
 })
-
-local SnowTab = Window:MakeTab({
-	Name = "Snow (World 4)",
+local W1Tab = Window:MakeTab({
+	Name = "FOREST (W1)",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
+
+})
+
+local W2Tab = Window:MakeTab({
+	Name = "DESERT (W2)",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+
+})
+
+local W3Tab = Window:MakeTab({
+	Name = "BEACH (W3)",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+
+})
+
+local W4Tab = Window:MakeTab({
+	Name = "SNOW (W4)",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+
+})
+
+local W5Tab = Window:MakeTab({
+	Name = "VOLCANO (W5)",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+
+})
+
+local W6Tab = Window:MakeTab({
+	Name = "CASTLE (W6)",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+
+})
+
+local W7Tab = Window:MakeTab({
+	Name = "CANDY (W7)",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+
 })
 
 local W8Tab = Window:MakeTab({
-	Name = "Garden (World 8)",
+	Name = "GARDEN (W8)",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
+
 })
 
+local W9Tab = Window:MakeTab({
+	Name = "MUSHROOM (W9)",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+
+})
 local TELTab = Window:MakeTab({
         Name = "Teleport",
         Icon = "rbxassetid://4483345998",
@@ -668,21 +682,7 @@ end
 	  
 })
 
-W8Tab:AddToggle({
-    Name = "INFINITY STONE XP FARM",
-    Default = false,
-    Callback = function(Value)
-      getgenv().SwordSimulator.W8SVIP = Value 
-      if Value then 
-        while Value do
-         W8SVIP() 
-        end 
-      end
-end
-	  
-})
-
-SnowTab:AddButton({
+W4Tab:AddButton({
 	Name = "Obby Teleport",
 	Callback = function()
 	position = Vector3.new(140, 48, -2473)
@@ -698,35 +698,35 @@ SnowTab:AddButton({
 TELTab:AddButton({
 	Name = "AFK WORLD",
 	Callback = function(Value)
-		Teleport(0)
+		TELEPORT(0)
 	  end
 })
 
 TELTab:AddButton({
 	Name = "Backroom",
 	Callback = function(Value)
-		Teleport(998)
+		TELEPORT(998)
 	  end
 })
 
 TELTab:AddButton({
 	Name = "FOREST (W1)",
 	Callback = function(Value)
-		Teleport(1)
+		TELEPORT(1)
 	  end
 })
 
 TELTab:AddButton({
 	Name = "DESERT (W2)",
 	Callback = function(Value)
-		Teleport(2)
+		TELEPORT(2)
 	  end
 })
 
 TELTab:AddButton({
 	Name = "BEACH (W3)",
 	Callback = function(Value)
-		Teleport(3)
+		TELEPORT(3)
 	  end
 })
 
@@ -734,36 +734,169 @@ TELTab:AddButton({
 TELTab:AddButton({
 	Name = "SNOW (W4)",
 	Callback = function(Value)
-		Teleport(4)
+		TELEPORT(4)
 	  end
 })
 
 TELTab:AddButton({
 	Name = "VOLCANO (W5)",
 	Callback = function(Value)
-		Teleport(5)
+		TELEPORT(5)
 	  end
 })
 
 TELTab:AddButton({
 	Name = "CASTLE (W6)",
 	Callback = function(Value)
-		Teleport(6)
+		TELEPORT(6)
 	  end
 })
 
 TELTab:AddButton({
 	Name = "CANDY (W7",
 	Callback = function(Value)
-		Teleport(7)
+		TELEPORT(7)
 	  end
 })
 
 TELTab:AddButton({
 	Name = "GARDEN (W8)",
 	Callback = function(Value)
-		Teleport(8)
+		TELEPORT(8)
 	  end
+})
+
+TELTab:AddButton({
+	Name = "MUSHROOM (W9)",
+	Callback = function(Value)
+		TELEPORT(9)
+	  end
+})
+
+W1Tab:AddToggle({
+    Name = "WORLD 1 XP FARM",
+    Default = false,
+    Callback = function(Value)
+      getgenv().SwordSimulator.W1FOREST = Value 
+      if Value then 
+        while Value do
+         W1FOREST() 
+        end 
+      end
+end
+	  
+})
+
+W2Tab:AddToggle({
+    Name = "WORLD 2 XP FARM",
+    Default = false,
+    Callback = function(Value)
+      getgenv().SwordSimulator.W2DESERT = Value 
+      if Value then 
+        while Value do
+         W2DESERT() 
+        end 
+      end
+end
+	  
+})
+
+W3Tab:AddToggle({
+    Name = "WORLD 3 XP FARM",
+    Default = false,
+    Callback = function(Value)
+      getgenv().SwordSimulator.W3BEACH = Value 
+      if Value then 
+        while Value do
+         W3BEACH() 
+        end 
+      end
+end
+	  
+})
+
+W4Tab:AddToggle({
+    Name = "WORLD 4 XP FARM",
+    Default = false,
+    Callback = function(Value)
+      getgenv().SwordSimulator.W4SNOW = Value 
+      if Value then 
+        while Value do
+         W4SNOW() 
+        end 
+      end
+end
+	  
+})
+
+W5Tab:AddToggle({
+    Name = "WORLD 5 XP FARM",
+    Default = false,
+    Callback = function(Value)
+      getgenv().SwordSimulator.W5VOLCANO = Value 
+      if Value then 
+        while Value do
+         W5VOLCANO() 
+        end 
+      end
+end
+	  
+})
+
+W6Tab:AddToggle({
+    Name = "WORLD 6 XP FARM",
+    Default = false,
+    Callback = function(Value)
+      getgenv().SwordSimulator.W6CASTLE = Value 
+      if Value then 
+        while Value do
+         W6CASTLE() 
+        end 
+      end
+end
+	  
+})
+
+W7Tab:AddToggle({
+    Name = "WORLD 7 XP FARM",
+    Default = false,
+    Callback = function(Value)
+      getgenv().SwordSimulator.W7CANDY = Value 
+      if Value then 
+        while Value do
+         W7CANDY() 
+        end 
+      end
+end
+	  
+})
+
+W8Tab:AddToggle({
+    Name = "WORLD 8 XP FARM",
+    Default = false,
+    Callback = function(Value)
+      getgenv().SwordSimulator.W8GARDEN = Value 
+      if Value then 
+        while Value do
+         W8GARDEN() 
+        end 
+      end
+end
+	  
+})
+
+W9Tab:AddToggle({
+    Name = "WORLD 9 XP FARM",
+    Default = false,
+    Callback = function(Value)
+      getgenv().SwordSimulator.W9MUSHROOM = Value 
+      if Value then 
+        while Value do
+         W9MUSHROOM() 
+        end 
+      end
+end
+	  
 })
 
 end
