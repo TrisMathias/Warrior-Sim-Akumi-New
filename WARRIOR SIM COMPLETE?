@@ -275,19 +275,68 @@ local BRTab = Window:MakeTab({
 	PremiumOnly = false
 
 })
-
-local SnowTab = Window:MakeTab({
-	Name = "Snow (World 4)",
+local W1Tab = Window:MakeTab({
+	Name = "FOREST (W1)",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
+
+})
+
+local W2Tab = Window:MakeTab({
+	Name = "DESERT (W2)",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+
+})
+
+local W3Tab = Window:MakeTab({
+	Name = "BEACH (W3)",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+
+})
+
+local W4Tab = Window:MakeTab({
+	Name = "SNOW (W4)",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+
+})
+
+local W5Tab = Window:MakeTab({
+	Name = "VOLCANO (W5)",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+
+})
+
+local W6Tab = Window:MakeTab({
+	Name = "CASTLE (W6)",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+
+})
+
+local W7Tab = Window:MakeTab({
+	Name = "CANDY (W7)",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+
 })
 
 local W8Tab = Window:MakeTab({
-	Name = "Garden (World 8)",
+	Name = "GARDEN (W8)",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
+
 })
 
+local W9Tab = Window:MakeTab({
+	Name = "MUSHROOM (W9)",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+
+})
 local TELTab = Window:MakeTab({
         Name = "Teleport",
         Icon = "rbxassetid://4483345998",
@@ -416,7 +465,7 @@ end
 	  
 })
 
-SnowTab:AddButton({
+W4Tab:AddButton({
 	Name = "Obby Teleport",
 	Callback = function()
 	position = Vector3.new(140, 48, -2473)
