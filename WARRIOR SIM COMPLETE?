@@ -24,7 +24,6 @@ W8L1 = false;
 W8L249 = false;
 W8L285 = false;
 W8VIP = false;
-W8SVIP = false;
 W1FOREST = false;
 W2DESERT = false;
 W3BEACH = false;
@@ -224,39 +223,6 @@ function W8VIP()
         end
         wait(0.1)
     end
-
-function W8SVIP()
-local args = {
-    [1] = true,
-    [2] = Vector3.new(-104.978515625, 4.449621677398682, -1314.7969970703125)
-}
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
-
-args = {
-    [1] = true,
-    [2] = Vector3.new(-87.2535400390625, 4.425842761993408, -1379.9188232421875)
-}
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
-
-args = {
-    [1] = true,
-    [2] = Vector3.new(-106.54766845703125, 4.398561477661133, -1381.0048828125)
-}
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
-
-args = {
-    [1] = true,
-    [2] = Vector3.new(-128.076171875, 4.421252727508545, -1379.9239501953125)
-}
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
-
-args = {
-    [1] = true,
-    [2] = Vector3.new(-123.13668060302734, 4.447671413421631, -1325.374267578125)
-}
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
-wait(0.3)
-end
 
 function TELEPORT(world)
     	local args = {
@@ -710,20 +676,6 @@ W8Tab:AddToggle({
       if Value then 
         while Value do
          W8VIP() 
-        end 
-      end
-end
-	  
-})
-
-W8Tab:AddToggle({
-    Name = "INFINITY STONE XP FARM",
-    Default = false,
-    Callback = function(Value)
-      getgenv().SwordSimulator.W8SVIP = Value 
-      if Value then 
-        while Value do
-         W8SVIP() 
         end 
       end
 end
