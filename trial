@@ -4,25 +4,25 @@ while W8 == true do
 
 local args = {
     [1] = true,
-    [2] = Vector3.new(-98.68902587890625, 5.99550199508667, -1382.385498046875v)
+    [2] = Vector3.new(-98.60323333740234, 4.384193420410156, -1382.116455078125)
 }
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
 
 args = {
     [1] = true,
-    [2] = Vector3.new(-129.2373504638672, 4.447024345397949, -1381.7197265625)
+    [2] = Vector3.new(-129.16470336914062, 4.402301788330078, -1381.638427734375)
 }
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
 
 args = {
     [1] = true,
-    [2] = Vector3.new(-124.84990692138672, 4.38883113861084, -1327.44482421875)
+    [2] = Vector3.new(-124.48933410644531, 4.405083656311035, -1326.1043701171875)
 }
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
 
 args = {
     [1] = true,
-    [2] = Vector3.new(-103.61581420898438, 4.417219161987305, -1315.4237060546875)
+    [2] = Vector3.new(-106.34468841552734, 4.429937839508057, -1314.6871337890625)
 }
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
 wait(0.3)
