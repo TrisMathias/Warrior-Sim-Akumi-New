@@ -25,6 +25,15 @@ W8L249 = false;
 W8L285 = false;
 W8VIP = false;
 W8SVIP = false;
+W1FOREST = false;
+W2DESERT = false;
+W3BEACH = false;
+W4SNOW = false;
+W5VOLCANO = false;
+W6CASTLE = false;
+W7CANDY = false;
+W8GARDEN = false;
+W9MUSHROOM = false;
   };
   
 -- Functions
