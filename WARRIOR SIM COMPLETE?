@@ -814,5 +814,19 @@ TELTab:AddButton({
 	  end
 })
 
+W1Tab:AddToggle({
+    Name = "INFINITY STONE XP FARM",
+    Default = false,
+    Callback = function(Value)
+      getgenv().SwordSimulator.W1FOREST = Value 
+      if Value then 
+        while Value do
+         W1FOREST() 
+        end 
+      end
+end
+	  
+})
+
 end
 OrionLib:Init()
