@@ -9,7 +9,8 @@ or game.PlaceId == 17678973875
 or game.PlaceId == 17678974142
 or game.PlaceId == 17678974410
 or game.PlaceId == 17766697506
-or game.PlaceId == 18970398024 then
+or game.PlaceId == 18970398024
+or game.PlaceId == 71395848954254 then
   
 -- Values
   getgenv().SwordSimulator = {
