@@ -277,6 +277,12 @@ args = {
     [2] = Vector3.new(-91.02971649169922, 4.597945690155029, -440.90869140625)
 }
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
+
+args = {
+    [1] = true,
+    [2] = Vector3.new(-83.51371765136719, 4.367786407470703, -513.4943237304688)
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Skill"):WaitForChild("ServerBehaviour"):FireServer(unpack(args))
 wait(0.1)
 end
 
