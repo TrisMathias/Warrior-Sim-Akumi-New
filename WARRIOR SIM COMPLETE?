@@ -814,6 +814,13 @@ TELTab:AddButton({
 	  end
 })
 
+TELTab:AddButton({
+	Name = "MUSHROOM (W9)",
+	Callback = function(Value)
+		TELEPORT(9)
+	  end
+})
+
 W1Tab:AddToggle({
     Name = "WORLD 1 XP FARM",
     Default = false,
