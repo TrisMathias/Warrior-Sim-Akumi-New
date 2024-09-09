@@ -745,35 +745,35 @@ W4Tab:AddButton({
 TELTab:AddButton({
 	Name = "AFK WORLD",
 	Callback = function(Value)
-		Teleport(0)
+		WORLD TELEPORT(0)
 	  end
 })
 
 TELTab:AddButton({
 	Name = "Backroom",
 	Callback = function(Value)
-		Teleport(998)
+		WORLD TELEPORT(998)
 	  end
 })
 
 TELTab:AddButton({
 	Name = "FOREST (W1)",
 	Callback = function(Value)
-		Teleport(1)
+		WORLD TELEPORT(1)
 	  end
 })
 
 TELTab:AddButton({
 	Name = "DESERT (W2)",
 	Callback = function(Value)
-		Teleport(2)
+		WORLD TELEPORT(2)
 	  end
 })
 
 TELTab:AddButton({
 	Name = "BEACH (W3)",
 	Callback = function(Value)
-		Teleport(3)
+		WORLD TELEPORT(3)
 	  end
 })
 
@@ -781,35 +781,35 @@ TELTab:AddButton({
 TELTab:AddButton({
 	Name = "SNOW (W4)",
 	Callback = function(Value)
-		Teleport(4)
+		WORLD TELEPORT(4)
 	  end
 })
 
 TELTab:AddButton({
 	Name = "VOLCANO (W5)",
 	Callback = function(Value)
-		Teleport(5)
+		WORLD TELEPORT(5)
 	  end
 })
 
 TELTab:AddButton({
 	Name = "CASTLE (W6)",
 	Callback = function(Value)
-		Teleport(6)
+		WORLD TELEPORT(6)
 	  end
 })
 
 TELTab:AddButton({
 	Name = "CANDY (W7",
 	Callback = function(Value)
-		Teleport(7)
+		WORLD TELEPORT(7)
 	  end
 })
 
 TELTab:AddButton({
 	Name = "GARDEN (W8)",
 	Callback = function(Value)
-		Teleport(8)
+		WORLD TELEPORT(8)
 	  end
 })
 
